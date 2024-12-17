@@ -1,21 +1,21 @@
-import questions from questionList
+import { Questions } from "./questions";
 
-
+import { questionList } from "./questions";
 let currentQuestionIndex = 0;
-function createHtml(questionList: Questions[], index: number){
+export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
     return `
         <div class="questionContainer">
             <div class="questionImageContainer">
-                <img src="${question.image}" alt="${question.alt}" class="questionImage">
+                <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
             </div>
             <div class="questionText">
                 <h2>${question.question}</h2>
-                <ul class="options">
-                    <li><button>${question.optionAnswer1}</button></li>
-                    <li><button>${question.optionAnswer2}</button></li>
-                    <li><button>${question.optionAnswer3}</button></li>
-                </ul>
+            <ul class="options">
+                <li><button>${Object.keys(question.answer)[0]}</button></li>
+                <li><button>${Object.keys(question.answer)[1]}</button></li>
+                <li><button>${Object.keys(question.answer)[2]}</button></li>
+            </ul>
             </div>
             <div class="navigationButtons">
                 <button class="nextBtn" id="nextButton" ${index === questionList.length - 1}">Next</button>
@@ -23,7 +23,7 @@ function createHtml(questionList: Questions[], index: number){
         </div>
     `;
 }
-function navigateQuestion() {
+export function navigateQuestion() {
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
@@ -31,7 +31,7 @@ function navigateQuestion() {
         alert('You have reached the end of the questions!');
     }
 }
-function printHtml() {
+export function printHtml() {
     const htmlContent = createHtml(questionList, currentQuestionIndex);
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
@@ -42,4 +42,4 @@ function printHtml() {
         nextButton.addEventListener('click', navigateQuestion);
     }
 }
-printHtml();
+printHtml()
