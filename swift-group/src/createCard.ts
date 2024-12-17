@@ -52,9 +52,9 @@ function createHtml(questionList: Questions[], index: number){
             <div class="questionText">
                 <h2>${question.question}</h2>
                 <ul class="options">
-                    <button>${question.optionAnswer1}</button>
-                    <button>${question.optionAnswer2}</button>
-                    <button>${question.optionAnswer3}</button>
+                    <li><button>${question.optionAnswer1}</button></li>
+                    <li><button>${question.optionAnswer2}</button></li>
+                    <li><button>${question.optionAnswer3}</button></li>
                 </ul>
             </div>
             <div class="navigationButtons">
