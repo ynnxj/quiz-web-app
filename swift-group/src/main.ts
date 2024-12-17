@@ -1,2 +1,3 @@
-import './style.scss'
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = "test 1"
+import './styles/styles.scss'
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = ""
+

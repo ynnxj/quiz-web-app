@@ -10,6 +10,8 @@ Ambitions nivån i gruppen är att applikationen ska se snygg ut och att alla G 
 
 I våra commits använder vi oss av stödorden: ADD, FIX, UPDATE, REMOVE, REFACTOR och INPROGRESS, och sedan beskriver vi vad vi gjort. Vi ska committa minst en gång om dagen till sin egna branch, även om det vi gör inte är klart(INPROGRESS).  Vi mergar till main på fredagsmötena tillsammans.  
 
-I vår grupp skriver vi allt på engelska och använder oss utav camelCase i JS och kebab-case i HTML. Vi kommer att använda oss utav Trello där vi skriver issues och use case?? 
+I vår grupp skriver vi allt på engelska och använder oss utav camelCase i JS och kebab-case i HTML. Vi kommer att använda oss utav Trello där vi skriver issues. 
+
+Man får inte merga sin egna branch, minst två medlemmar ska kolla och kommentera pull req. 
  
 Vårt quiz ska vara Disney inspirerat. 

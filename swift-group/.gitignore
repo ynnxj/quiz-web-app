@@ -23,3 +23,6 @@ dist-ssr
 *.sw?
 *.css.map
 style.css 
+
+# macOS System files
+.DS_Store
