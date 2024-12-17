@@ -1,0 +1,6 @@
+@use './globals.scss' as *;
+
+body {
+    background-color: $background;
+    color: $text;
+}
