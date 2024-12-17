@@ -2,7 +2,7 @@ import { Questions } from "./questions";
 
 import { questionList } from "./questions";
 let currentQuestionIndex = 0;
-function createHtml(questionList: Questions[], index: number){
+export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
     return `
         <div class="questionContainer">
@@ -23,7 +23,7 @@ function createHtml(questionList: Questions[], index: number){
         </div>
     `;
 }
-function navigateQuestion() {
+export function navigateQuestion() {
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
@@ -31,7 +31,7 @@ function navigateQuestion() {
         alert('You have reached the end of the questions!');
     }
 }
-function printHtml() {
+export function printHtml() {
     const htmlContent = createHtml(questionList, currentQuestionIndex);
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
@@ -42,4 +42,4 @@ function printHtml() {
         nextButton.addEventListener('click', navigateQuestion);
     }
 }
-printHtml();
+printHtml()
