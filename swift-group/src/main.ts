@@ -1,2 +1,2 @@
 import './style.scss'
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = "vic"
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = "test 2"
