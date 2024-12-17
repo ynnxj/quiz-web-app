@@ -1,6 +1,5 @@
 
 interface Questions {
-    id: number;
     image: string;
     alt: string;
     question: string;
@@ -15,7 +14,6 @@ interface Questions {
 }
 const questionList: Questions[] = [
     {
-        id: 1,
         image: 'lionking.jpg',
         alt: 'Lion king',
         question: 'Who killed Mufasa?',
@@ -29,10 +27,9 @@ const questionList: Questions[] = [
         }
     },
     {
-        id: 1,
         image: 'lionking.jpg',
         alt: 'Lion king',
-        question: 'Who killed Mufasa?',
+        question: 'Who killed simba?',
         optionAnswer1: 'Simba',
         optionAnswer2: 'Scar',
         optionAnswer3: 'Kiara',
@@ -41,14 +38,13 @@ const questionList: Questions[] = [
             answerTwo: true,
             answerThree: false,
         }
-    }    
+    },       
 ];
 
-function createHtml(questionList: Questions[]): string {
-    let questionListHTML = '';
-
-    questionList.forEach(question => {
-        questionListHTML += `
+let currentQuestionIndex = 0;
+function createHtml(questionList: Questions[], index: number){
+    const question = questionList[index];
+    return `
         <div class="questionContainer">
             <div class="questionImageContainer">
                 <img src="${question.image}" alt="${question.alt}" class="questionImage">
@@ -61,16 +57,29 @@ function createHtml(questionList: Questions[]): string {
                     <button>${question.optionAnswer3}</button>
                 </ul>
             </div>
-        </div>`;
-    });
-    return questionListHTML;
+            <div class="navigationButtons">
+                <button class="nextBtn" id="nextButton" ${index === questionList.length - 1}">Next</button>
+            </div>
+        </div>
+    `;
 }
-
-function printHtml(){
-    const htmlContent = createHtml(questionList);
+function navigateQuestion() {
+    if (currentQuestionIndex < questionList.length - 1) {
+        currentQuestionIndex++;
+        printHtml();
+    } else {
+        alert('You have reached the end of the questions!');
+    }
+}
+function printHtml() {
+    const htmlContent = createHtml(questionList, currentQuestionIndex);
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
         container.innerHTML = htmlContent;
     }
+    const nextButton = document.getElementById('nextButton');
+    if (nextButton) {
+        nextButton.addEventListener('click', navigateQuestion);
+    }
 }
-printHtml()
+printHtml();
