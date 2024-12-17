@@ -1,4 +1,4 @@
-interface Questions{
+export interface Questions{
     id: number;
     img: {
         url: string;
@@ -10,7 +10,7 @@ interface Questions{
     answer: { [key: string]: boolean };
 }
   
-const questionList: Questions[] = [
+export const questionList: Questions[] = [
     {
         id: 1,
         img: {
