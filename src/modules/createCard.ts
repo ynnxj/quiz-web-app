@@ -9,17 +9,17 @@ export function createHtml(questionList: Questions[], index: number){
     .map((option) => `<li><button class="option-btn">${option}</button></li>`)
     .join("")
     return `
-        <div class="questionContainer">
-            <div class="questionImageContainer">
+        <div class="question-container">
+            <div class="question-image-container">
                 <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
             </div>
-            <div class="questionText">
+            <div class="question-text">
                 <h2>${question.question}</h2>
             <ul class="options">
                  ${options}
             </ul>
             </div>
-            <div class="navigationButtons">
+            <div class="navigation-buttons">
                 <button class="next-btn" id="nextButton" ${index === questionList.length - 1}">Next</button>
             </div>
         </div>
