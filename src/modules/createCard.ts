@@ -42,9 +42,9 @@ export function handleOptionClick(event: Event){
         const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
 
         if(isCorrect) {
-            alert("Correct")
+            getScore()
         } else {
-            alert("Wrong")
+            getScore()
         }
     }
 }
