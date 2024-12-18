@@ -14,13 +14,13 @@ export function createHtml(questionList: Questions[], index: number){
         <div class="question-container">
             <div class="question-image-container">
                 <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
+                <div class="question-text">
+                    <h2>${question.question}</h2>
+                </div> 
             </div>
-            <div class="question-text">
-                <h2>${question.question}</h2>
             <ul class="options">
                  ${options}
             </ul>
-            </div>
             <div class="navigation-buttons">
                 <button class="next-btn" id="nextButton" ${index === questionList.length - 1}">Next</button>
             </div>

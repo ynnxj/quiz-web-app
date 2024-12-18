@@ -1,7 +1,43 @@
-card-container{
+@use './globals.scss' as *;
 
+.card-container{
+    width: 550px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
     
-    questionContainer{
-        background-color: black;
+    border: 1px solid $text;
+    border-radius: 10px;
+    padding: 10px 10px;
+    .question-container{
+        .question-image-container{
+            width: 100%;
+            border-bottom: 1px solid $text;
+            img{
+                
+                
+            }
+            .question-text{
+                width: 100%;
+            }
+
+        }
+        .options{
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            list-style-type: none;
+            width: 100%;
+        }
+        .navigation-buttons{
+
+        }
+        button{
+            background-color: $background;
+            border: 1px solid $text;
+            border-radius: 10px;
+            cursor: pointer;
+            color: $text;
+        }
     }
 }
