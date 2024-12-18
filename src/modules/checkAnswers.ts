@@ -1,6 +1,6 @@
 import { Questions } from "./questions";
 
-let userScore = 0
+export let userScore = 0
 
 export function checkAnswer(question: Questions, selectedAnswer: string): boolean {
   const isCorrect = question.answer[selectedAnswer] || false;
@@ -14,5 +14,4 @@ export function checkAnswer(question: Questions, selectedAnswer: string): boolea
 export function getScore(): number {
   console.log(userScore)
   return userScore;
-  
 }
