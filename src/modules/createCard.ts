@@ -43,9 +43,7 @@ export function handleOptionClick(event: Event){
 
         if(isCorrect) {
             getScore()
-        } else {
-            getScore()
-        }
+        } 
     }
 }
 
