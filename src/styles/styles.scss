@@ -1,5 +1,6 @@
 @use './globals.scss' as *;
 @import 'card';
+@import 'reset';
 
 body {
     background-color: $background;
