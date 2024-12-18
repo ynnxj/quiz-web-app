@@ -12,5 +12,7 @@ export function checkAnswer(question: Questions, selectedAnswer: string): boolea
 }
 
 export function getScore(): number {
+  console.log(userScore)
   return userScore;
+  
 }

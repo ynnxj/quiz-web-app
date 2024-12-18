@@ -2,7 +2,7 @@
 import { checkAnswer, getScore } from "./checkAnswers";
 import { Questions, questionList } from "./questions";
 
-let currentQuestionIndex = 0;
+let currentQuestionIndex:number = 0;
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
     const options = Object.keys(question.answer)
@@ -42,10 +42,8 @@ export function handleOptionClick(event: Event){
         const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
 
         if(isCorrect) {
-            alert("Correct")
-        } else {
-            alert("Wrong")
-        }
+            getScore()
+        } 
     }
 }
 
