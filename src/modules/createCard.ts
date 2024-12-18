@@ -20,7 +20,7 @@ export function createHtml(questionList: Questions[], index: number){
             </ul>
             </div>
             <div class="navigationButtons">
-                <button class="nextBtn" id="nextButton" ${index === questionList.length - 1}">Next</button>
+                <button class="next-btn" id="nextButton" ${index === questionList.length - 1}">Next</button>
             </div>
         </div>
     `;
