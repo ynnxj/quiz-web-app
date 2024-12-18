@@ -1,9 +1,13 @@
-import { Questions } from "./questions";
 
-import { questionList } from "./questions";
+import { checkAnswer, getScore } from "./checkAnswers";
+import { Questions, questionList } from "./questions";
+
 let currentQuestionIndex = 0;
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
+    const options = Object.keys(question.answer)
+    .map((option) => `<li><button class="option-btn">${option}</button></li>`)
+    .join("")
     return `
         <div class="questionContainer">
             <div class="questionImageContainer">
@@ -12,9 +16,7 @@ export function createHtml(questionList: Questions[], index: number){
             <div class="questionText">
                 <h2>${question.question}</h2>
             <ul class="options">
-                <li><button>${Object.keys(question.answer)[0]}</button></li>
-                <li><button>${Object.keys(question.answer)[1]}</button></li>
-                <li><button>${Object.keys(question.answer)[2]}</button></li>
+                 ${options}
             </ul>
             </div>
             <div class="navigationButtons">
@@ -31,12 +33,34 @@ export function navigateQuestion() {
         alert('You have reached the end of the questions!');
     }
 }
+
+export function handleOptionClick(event: Event){
+    const target = event.target as HTMLElement;
+    if(target.tagName === "BUTTON" && target.classList.contains("option-btn")){
+        const selectedAnswer = target.textContent || "";
+        const currentQuestion = questionList[currentQuestionIndex];
+        const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
+
+        if(isCorrect) {
+            alert("Correct")
+        } else {
+            alert("Wrong")
+        }
+    }
+}
+
 export function printHtml() {
     const htmlContent = createHtml(questionList, currentQuestionIndex);
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
         container.innerHTML = htmlContent;
     }
+
+    const optionButton = document.querySelectorAll(".option-btn");
+    optionButton.forEach((button) => {
+        button.addEventListener("click", handleOptionClick)
+    })
+
     const nextButton = document.getElementById('nextButton');
     if (nextButton) {
         nextButton.addEventListener('click', navigateQuestion);

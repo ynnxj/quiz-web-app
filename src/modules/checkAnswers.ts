@@ -1,17 +1,16 @@
-const userAnswers = string[] = []
+import { Questions } from "./questions";
 
-function checkAnswers(/*quiz bank*/, userAnswers: string[]): void {
-  let score = 0;
+let userScore = 0
 
-  /*quiz bank*/.forEach((question, index) => {
-    const userAnswer = userAnswers[index]
-    const isCorrect = question.answer === userAnswer
-    console.log(`right answer ${question.answer} your answer ${userAnswer}`)
+export function checkAnswer(question: Questions, selectedAnswer: string): boolean {
+  const isCorrect = question.answer[selectedAnswer] || false;
 
-    if(isCorrect){
-      score++
-    }
-  })
+  if(isCorrect){
+    userScore++;
+  }
+  return isCorrect;
 }
 
-checkAnswers(/*quiz bank*/userAnswers)
+export function getScore(): number {
+  return userScore;
+}
