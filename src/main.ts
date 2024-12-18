@@ -1,2 +1,7 @@
 import './styles/styles.scss'
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = "vic"
+import { createHtml } from './modules/createCard'
+
+document.querySelector<HTMLDivElement>('#app')!.innerHTML = ""
+
+createHtml()
+

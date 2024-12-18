@@ -1,10 +1,9 @@
+
 import { checkAnswer, getScore } from "./checkAnswers";
 import { Questions, questionList } from "./questions";
 
-
 let currentQuestionIndex = 0;
-
-function createHtml(questionList: Questions[], index: number){
+export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
     const options = Object.keys(question.answer)
     .map((option) => `<li><button class="option-btn">${option}</button></li>`)
@@ -12,13 +11,13 @@ function createHtml(questionList: Questions[], index: number){
     return `
         <div class="questionContainer">
             <div class="questionImageContainer">
-                <img src="${question.img}" alt="${question.alt}" class="questionImage">
+                <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
             </div>
             <div class="questionText">
                 <h2>${question.question}</h2>
-                <ul class="options">
-                ${options}
-                </ul>
+            <ul class="options">
+                 ${options}
+            </ul>
             </div>
             <div class="navigationButtons">
                 <button class="nextBtn" id="nextButton" ${index === questionList.length - 1}">Next</button>
@@ -26,7 +25,7 @@ function createHtml(questionList: Questions[], index: number){
         </div>
     `;
 }
-function navigateQuestion() {
+export function navigateQuestion() {
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
@@ -35,7 +34,7 @@ function navigateQuestion() {
     }
 }
 
-function handleOptionClick(event: Event){
+export function handleOptionClick(event: Event){
     const target = event.target as HTMLElement;
     if(target.tagName === "BUTTON" && target.classList.contains("option-btn")){
         const selectedAnswer = target.textContent || "";
@@ -50,7 +49,7 @@ function handleOptionClick(event: Event){
     }
 }
 
-function printHtml() {
+export function printHtml() {
     const htmlContent = createHtml(questionList, currentQuestionIndex);
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
@@ -67,4 +66,4 @@ function printHtml() {
         nextButton.addEventListener('click', navigateQuestion);
     }
 }
-printHtml();
+printHtml()
