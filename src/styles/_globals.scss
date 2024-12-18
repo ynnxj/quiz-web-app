@@ -7,3 +7,8 @@ $background: #73020C;
 $text: #F5DEB3;
 
 
+// Button styles
+@mixin basic {
+    border: 1px solid $text;
+    border-radius: 0.5rem;
+}
