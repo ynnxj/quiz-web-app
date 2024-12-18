@@ -5,8 +5,10 @@ import { Questions, questionList } from "./questions";
 let currentQuestionIndex:number = 0;
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
+    //Extract answer options from answer property
     const options = Object.keys(question.answer)
     .map((option) => `<li><button class="option-btn">${option}</button></li>`)
+    //ensure no commas or seperator are included
     .join("")
     return `
         <div class="question-container">
@@ -34,13 +36,20 @@ export function navigateQuestion() {
     }
 }
 
+//Handles click event for answer option buttons 
 export function handleOptionClick(event: Event){
+    //Get the target element of the click and cast as htmlelement 
     const target = event.target as HTMLElement;
+    //Check if target element is a button with the right class
     if(target.tagName === "BUTTON" && target.classList.contains("option-btn")){
+        //retrive text content of button
         const selectedAnswer = target.textContent || "";
+
         const currentQuestion = questionList[currentQuestionIndex];
+        //pass in current question and selected answer 
         const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
 
+        //if the answer is correct, update the user's score 
         if(isCorrect) {
             getScore()
         } 
