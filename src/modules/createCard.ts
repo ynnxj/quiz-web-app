@@ -1,5 +1,5 @@
 
-import { checkAnswer, getScore } from "./checkAnswers";
+import { checkAnswer, getScore, userScore } from "./checkAnswers";
 import { Questions, questionList } from "./questions";
 
 let currentQuestionIndex:number = 0;
@@ -30,7 +30,7 @@ export function navigateQuestion() {
         currentQuestionIndex++;
         printHtml();
     } else {
-        alert('You have reached the end of the questions!');
+        alert(`You have reached the end of the questions! \n\n Your score is: ${userScore}`);
     }
 }
 

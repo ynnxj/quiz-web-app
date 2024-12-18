@@ -5,3 +5,17 @@ body {
     background-color: $background;
     color: $text;
 }
+
+
+header {
+    border-bottom: 1px solid $text;
+
+    h1 {
+        display: flex;
+        justify-content: center;
+        font-family: $header-font;
+        font-size: 3.5rem;
+        font-weight: 400;
+        margin: 10px;
+    }
+}
