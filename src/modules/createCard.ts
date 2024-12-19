@@ -3,13 +3,15 @@ import { checkAnswer, getScore, userScore } from "./checkAnswers";
 import { Questions, questionList } from "./questions";
 
 let currentQuestionIndex:number = 0;
+let selectedAnswer:string = "";
+
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
     //Extract answer options from answer property
     const options = Object.keys(question.answer)
     .map((option) => `<li><button class="option-btn">${option}</button></li>`)
     //ensure no commas or seperator are included
-    .join("")
+    .join("");
     return `
         <div class="question-container">
             <div class="question-image-container">
@@ -27,7 +29,17 @@ export function createHtml(questionList: Questions[], index: number){
         </div>
     `;
 }
+
+
 export function navigateQuestion() {
+    const currentQuestion = questionList[currentQuestionIndex]
+    
+    //Validate the answer and update the score 
+    if(selectedAnswer && checkAnswer(currentQuestion, selectedAnswer)){
+        getScore()
+    }
+    selectedAnswer = "";
+
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
@@ -38,21 +50,13 @@ export function navigateQuestion() {
 
 //Handles click event for answer option buttons 
 export function handleOptionClick(event: Event){
+
     //Get the target element of the click and cast as htmlelement 
     const target = event.target as HTMLElement;
+
     //Check if target element is a button with the right class
     if(target.tagName === "BUTTON" && target.classList.contains("option-btn")){
-        //retrive text content of button
-        const selectedAnswer = target.textContent || "";
-
-        const currentQuestion = questionList[currentQuestionIndex];
-        //pass in current question and selected answer 
-        const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
-
-        //if the answer is correct, update the user's score 
-        if(isCorrect) {
-            getScore()
-        } 
+        selectedAnswer = target.textContent || ""
     }
 }
 
