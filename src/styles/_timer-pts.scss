@@ -1,0 +1,12 @@
+@import 'globals.scss';
+
+.timer-pts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.points-btn, .countdown-timer {
+    @include basic;
+    margin: 1rem 0.5rem 1rem 0.5rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+}

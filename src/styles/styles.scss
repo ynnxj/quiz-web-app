@@ -1,6 +1,8 @@
 @use './globals.scss' as *;
-@use './reset.scss' as *;
-@use './card.scss' as *;
+@import 'card';
+@import 'reset';
+@import 'timer-pts.scss';
+
 
 body {
     background-color: $background;
