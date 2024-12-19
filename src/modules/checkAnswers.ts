@@ -21,3 +21,6 @@ export function getScore(): number {
   //return the users score
   return userScore;
 }
+
+
+//When the user has picked the right answer and then choose another the point is til there, pusha score when next button is clicked 
