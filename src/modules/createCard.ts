@@ -18,9 +18,9 @@ export function createHtml(questionList: Questions[], index: number){
                     <h2>${question.question}</h2>
                 </div> 
             </div>
-            <ul class="options">
+            <div class="options">
                  ${options}
-            </ul>
+            </div>
             <div class="navigation-buttons">
                 <button class="next-btn" id="nextButton" ${index === questionList.length - 1}">Next</button>
             </div>

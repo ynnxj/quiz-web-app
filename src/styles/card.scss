@@ -1,24 +1,34 @@
 @use './globals.scss' as *;
 
 .card-container{
-    width: 550px;
-    height: 600px;
+    width: 750px;
     display: flex;
     flex-direction: column;
-    
-    border: 1px solid $text;
-    border-radius: 10px;
     padding: 10px 10px;
+    margin: 0 auto;
     .question-container{
         .question-image-container{
-            width: 100%;
-            border-bottom: 1px solid $text;
+            height: 500px;
+            margin-bottom: 5px;
+            border: 1px solid $text;
+            border-radius: 10px;
             img{
-                
-                
+                height: 450px;
+                border-radius: 10px;
+                width: 100%;
+                object-fit: scale-down;
             }
             .question-text{
                 width: 100%;
+                height: 50px;
+                border-top: 1px solid $text;
+                display: grid;
+                h2{
+                    text-align: center;
+                    height: 100%;
+                    font-family: $main-font;
+                    margin-top: 5px;
+                }
             }
 
         }
@@ -28,9 +38,26 @@
             gap: 5px;
             list-style-type: none;
             width: 100%;
+            height: 150px;
+            margin-top: 10px;
+            li{
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                
+            }
         }
         .navigation-buttons{
-
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-top: 5px;
+            button{
+                width: 50%;
+                font-weight: bold;
+                font-size: 1.4rem;
+            }
         }
         button{
             background-color: $background;
@@ -38,6 +65,14 @@
             border-radius: 10px;
             cursor: pointer;
             color: $text;
+            width: 70%;
+            height: 45px;
+            font-size: 1.3rem;
+            font-family: $main-font;
+            &:hover{
+                background-color: #8f000c;
+            }
         }
+        
     }
 }
