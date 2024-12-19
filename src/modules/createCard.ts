@@ -77,4 +77,3 @@ export function printHtml() {
         nextButton.addEventListener('click', navigateQuestion);
     }
 }
-printHtml()
