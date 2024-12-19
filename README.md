@@ -1,6 +1,6 @@
 # Trello Log - Team Swift
 
-_Trello board on December 13, 2024._ ![Trello board on 13.dec.2024]()
+_Trello board on December 13, 2024._ ![Trello board on 13.dec.2024](./public/trello-logs/first-sprint.png)
 
 _Trello board on December 16, 2024._ ![Trello board on 16.dec.2024]()
 
