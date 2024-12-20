@@ -36,9 +36,9 @@
 # Swift Team Meeting - December 19, 2024
 
 1. Points display is done.
-2. Decide new Scrum master.
+2. Decide new Scrum master, Malin.
 
 # Swift Team Meeting - December 20, 2024
 
-1.
-2.
+1. Talked about how to proceed, and details about how to make some functionality, discusses how we are going to work during christmas.
+2. 
