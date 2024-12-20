@@ -14,7 +14,7 @@ export const questionList: Questions[] = [
     {
         id: 1,
         img: {
-            url: 'public/images/question-1.webp', 
+            url: 'images/question-1.webp', 
             alt: 'The Cinderella castle surrounded by a lake and a sunset sky.',
             width: 1600,
             height: 900
@@ -29,7 +29,7 @@ export const questionList: Questions[] = [
     {
         id: 2,
         img: {
-            url: 'public/images/question-2.webp', 
+            url: 'images/question-2.webp', 
             alt: 'Mickey Mouse hugging his companion, Pluto the dog.',
             width: 736,
             height: 736
@@ -44,7 +44,7 @@ export const questionList: Questions[] = [
     {
         id: 3,
         img: {
-            url: 'public/images/question-3.webp', 
+            url: 'images/question-3.webp', 
             alt: 'Scar the lion from The Lion King.',
             width: 1232,
             height: 1232
@@ -59,7 +59,7 @@ export const questionList: Questions[] = [
     {
         id: 4,
         img: {
-            url: 'public/images/question-4.webp', 
+            url: 'images/question-4.webp', 
             alt: 'Dumbo the elephan flying in the air.',
             width: 700,
             height: 700
@@ -74,7 +74,7 @@ export const questionList: Questions[] = [
     {
         id: 5,
         img: {
-            url: 'public/images/question-5.webp', 
+            url: 'images/question-5.webp', 
             alt: 'Woody the toy cowboy riding Bullseye the toy horse, in a desert surrounded by cacti.',
             width: 1024,
             height: 1024
@@ -89,7 +89,7 @@ export const questionList: Questions[] = [
     {
         id: 6,
         img: {
-            url: 'public/images/question-6.webp', 
+            url: 'images/question-6.webp', 
             alt: 'Portrait of Rajah the tiger from Alladin.',
             width: 2400,
             height: 2400
@@ -104,7 +104,7 @@ export const questionList: Questions[] = [
     {
         id: 7,
         img: {
-            url: 'public/images/question-7.webp', 
+            url: 'images/question-7.webp', 
             alt: 'Collage of several Disney animal characters.',
             width: 2048,
             height: 2048
@@ -119,7 +119,7 @@ export const questionList: Questions[] = [
     {
         id: 8,
         img: {
-            url: 'public/images/question-8.webp', 
+            url: 'images/question-8.webp', 
             alt: 'Princess Tiana with an unsure facial expression, holding the Frog.',
             width: 800,
             height: 800
@@ -134,7 +134,7 @@ export const questionList: Questions[] = [
     {
         id: 9,
         img: {
-            url: 'public/images/question-9.webp', 
+            url: 'images/question-9.webp', 
             alt: 'The dalmations of 101 Dalmations.',
             width: 900,
             height: 900
@@ -149,7 +149,7 @@ export const questionList: Questions[] = [
     {
         id: 10,
         img: {
-            url: 'public/images/question-10.webp', 
+            url: 'images/question-10.webp', 
             alt: 'Sabastian the crab and Flounder the fish, in both 2D animation and live action.',
             width: 1536,
             height: 1536
@@ -164,7 +164,7 @@ export const questionList: Questions[] = [
     {
         id: 11,
         img: {
-            url: 'public/images/question-11.webp', 
+            url: 'images/question-11.webp', 
             alt: 'Portrait of sisters queen Elsa and princess Anna from Frozen.',
             width: 1024,
             height: 768
@@ -179,7 +179,7 @@ export const questionList: Questions[] = [
     {
         id: 12,
         img: {
-            url: 'public/images/question-12.webp', 
+            url: 'images/question-12.webp', 
             alt: 'The yellow circus tent from Dumbo.',
             width: 1440,
             height: 1080
@@ -194,7 +194,7 @@ export const questionList: Questions[] = [
     {
         id: 13,
         img: {
-            url: 'public/images/question-13.webp', 
+            url: 'images/question-13.webp', 
             alt: 'Close up of young Simba and young Nala looking at each other.',
             width: 1920,
             height: 960
@@ -209,7 +209,7 @@ export const questionList: Questions[] = [
     {
         id: 14,
         img: {
-            url: 'public/images/question-14.webp', 
+            url: 'images/question-14.webp', 
             alt: 'Hercules together with Philoctetes, measuring his muscular arm.',
             width: 1600,
             height: 800
@@ -224,7 +224,7 @@ export const questionList: Questions[] = [
     {
         id: 15,
         img: {
-            url: 'public/images/question-15.webp', 
+            url: 'images/question-15.webp', 
             alt: 'A black haired woman in a red dress and bow, singing into a microphone.',
             width: 1024,
             height: 1024
@@ -239,7 +239,7 @@ export const questionList: Questions[] = [
     {
         id: 16,
         img: {
-            url: 'public/images/question-16.webp', 
+            url: 'images/question-16.webp', 
             alt: 'Portait of Edna Mode from The Incredibles.',
             width: 1920,
             height: 802
@@ -254,7 +254,7 @@ export const questionList: Questions[] = [
     {
         id: 17,
         img: {
-            url: 'public/images/question-17.webp', 
+            url: 'images/question-17.webp', 
             alt: 'Mowgli the human child and Kaa the snake sitting in a tree, looking at each other.',
             width: 3000,
             height: 2164
@@ -269,7 +269,7 @@ export const questionList: Questions[] = [
     {
         id: 18,
         img: {
-            url: 'public/images/question-18.webp', 
+            url: 'images/question-18.webp', 
             alt: 'The island of Motunui from Moana, surrounde by the sea and a colorful sky.',
             width: 1920,
             height: 800
@@ -284,7 +284,7 @@ export const questionList: Questions[] = [
     {   
         id: 19,
         img: {
-            url: 'public/images/question-19.webp', 
+            url: 'images/question-19.webp', 
             alt: 'Mutiple Disney princesses, standing next to each other.',
             width: 1200,
             height: 798
@@ -299,7 +299,7 @@ export const questionList: Questions[] = [
     {
         id: 20,
         img: {
-            url: 'public/images/question-20.webp', 
+            url: 'images/question-20.webp', 
             alt: 'Mulan together with Mushu the dragon, Cri-Kee the cricket and Khan the horse, standing in a bamboo forest.',
             width: 1024,
             height: 576
@@ -311,4 +311,4 @@ export const questionList: Questions[] = [
             'Khan': false
         }
     }
-];
+]
