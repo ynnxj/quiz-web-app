@@ -1,6 +1,7 @@
 
 import { checkAnswer, getScore, userScore } from "./checkAnswers";
 import { Questions, questionList } from "./questions";
+import { displayUserPoints } from "./displayUserPoints";
 
 let currentQuestionIndex:number = 0;
 let selectedAnswer:string = "";
@@ -75,5 +76,6 @@ export function printHtml() {
     const nextButton = document.getElementById('nextButton');
     if (nextButton) {
         nextButton.addEventListener('click', navigateQuestion);
+        displayUserPoints()
     }
 }
