@@ -1,10 +1,10 @@
 
-import { checkAnswer, getScore, userScore } from "./checkAnswers";
-import { Questions, questionList } from "./questions";
-import { displayUserPoints } from "./displayUserPoints";
+import { checkAnswer, getScore, userScore } from "./checkAnswers"
+import { Questions, questionList } from "./questions"
+import { displayUserPoints } from "./displayUserPoints"
 
-let currentQuestionIndex:number = 0;
-let selectedAnswer:string = "";
+let currentQuestionIndex:number = 0
+let selectedAnswer:string = ""
 
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
@@ -63,19 +63,19 @@ export function handleOptionClick(event: Event){
 
 export function printHtml() {
     const htmlContent = createHtml(questionList, currentQuestionIndex);
-    const container = document.querySelector<HTMLElement>('.card-container');
+    const container = document.querySelector<HTMLElement>('.card-container')
     if (container) {
         container.innerHTML = htmlContent;
     }
 
-    const optionButton = document.querySelectorAll(".option-btn");
+    const optionButton = document.querySelectorAll(".option-btn")
     optionButton.forEach((button) => {
         button.addEventListener("click", handleOptionClick)
     })
 
-    const nextButton = document.getElementById('nextButton');
+    const nextButton = document.getElementById('nextButton')
     if (nextButton) {
-        nextButton.addEventListener('click', navigateQuestion);
+        nextButton.addEventListener('click', navigateQuestion)
         displayUserPoints()
     }
 }
