@@ -16,7 +16,7 @@ export function createHtml(questionList: Questions[], index: number){
     return `
         <div class="question-container">
             <div class="question-image-container">
-                <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
+                <img loading="lazy" src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
                 <div class="question-text">
                     <h2>${question.question}</h2>
                 </div> 
