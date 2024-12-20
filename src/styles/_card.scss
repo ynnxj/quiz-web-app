@@ -1,81 +1,138 @@
 @use './globals.scss' as *;
 
-.card-container{
-    width: 750px;
+.card-container {
+    //width: 750px;
     display: flex;
     flex-direction: column;
     padding: 10px 10px;
     margin: 0 auto;
-    .question-container{
-        .question-image-container{
-            height: 500px;
-            margin-bottom: 5px;
-            border: 1px solid $text;
-            border-radius: 10px;
-            img{
-                height: 450px;
-                border-radius: 10px;
-                width: 100%;
-                object-fit: scale-down;
+    font-family: $main-font;
+
+    .start-end-card {
+        border: 1px solid $text;
+        border-radius: 10px;
+
+        img {
+            height: 450px;
+            width: 100%;
+            object-fit: cover;
+        }
+    
+        h2 {
+            text-align: center;
+            font-weight: 400;
+            font-size: 2rem;
+            padding-top: 5px;
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: 1.2rem;
+            padding-bottom: 20px;
+
+            div p:last-child {
+                font-size: 1.5rem;
+                font-weight: 580;
             }
-            .question-text{
-                width: 100%;
-                height: 50px;
-                border-top: 1px solid $text;
-                display: grid;
-                h2{
-                    text-align: center;
-                    height: 100%;
-                    font-family: $main-font;
-                    margin-top: 5px;
-                }
+            
+            p:nth-child(2) {
+                text-align: center;
             }
 
-        }
-        .options{
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
-            list-style-type: none;
-            width: 100%;
-            height: 150px;
-            margin-top: 10px;
-            li{
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                
+            p:nth-child(1),
+            p:nth-child(3) {
+                text-align: center;
+                padding: 3px 10px;
+                margin: 0 10px;
+            }
+
+            hr {
+                border: none;
+                height: 1px;
+                background-color: $text;
+                margin: 0 10px;
             }
         }
-        .navigation-buttons{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 5px;
-            button{
-                width: 50%;
-                font-weight: bold;
-                font-size: 1.4rem;
-            }
-        }
-        button{
-            background-color: $background;
-            border: 1px solid $text;
+    }
+}
+
+.question-container {
+    .question-image-container {
+        height: 500px;
+        margin-bottom: 5px;
+        border: 1px solid $text;
+        border-radius: 10px;
+        
+        img {
+            height: 450px;
             border-radius: 10px;
-            cursor: pointer;
-            color: $text;
-            width: 70%;
-            height: 45px;
-            font-size: 1.3rem;
-            font-family: $main-font;
-            &:hover{
-                background-color: #8f000c;
-            }
-            &:focus{
-                background-color: #8f000c;
-            }
+            width: 100%;
+            object-fit: scale-down;
         }
         
+        .question-text {
+            width: 100%;
+            height: 50px;
+            border-top: 1px solid $text;
+            display: grid;
+            
+            h2 {
+                text-align: center;
+                height: 100%;
+                font-family: $main-font;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .options {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        list-style-type: none;
+        width: 100%;
+        height: 150px;
+        margin-top: 10px;
+        
+        li {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    .navigation-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: 5px;
+        
+        button {
+            width: 50%;
+            font-weight: bold;
+            font-size: 1.4rem;
+        }
+    }
+
+    button {
+        background-color: $background;
+        border: 1px solid $text;
+        border-radius: 10px;
+        cursor: pointer;
+        color: $text;
+        width: 70%;
+        height: 45px;
+        font-size: 1.3rem;
+        font-family: $main-font;
+
+        &:hover {
+            background-color: #8f000c;
+        }
+
+        &:focus {
+            background-color: #8f000c;
+        }
     }
 }
