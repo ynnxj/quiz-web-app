@@ -187,8 +187,8 @@ export const questionList: Questions[] = [
         question: 'What is the name of the circus in Dumbo?',
         answer: {
             'Ringling Bros.': false,
-            'WDP Circus': false,
-            'Medici Brothers\' Circus': true
+            'WDP Circus': true,
+            'Medici Brothers\' Circus': false
         }
     },
     {
