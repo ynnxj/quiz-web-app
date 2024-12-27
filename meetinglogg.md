@@ -54,5 +54,8 @@
 2. Further discussion will take place to decide the most efficient approach, but both options (loop and event listener) are on the table.
 
 # Swift Team Meeting - December 27, 2024
-1. 
-2. 
+1. We reviewed and evaluated our first two-week sprint with a retro, discussing both ups and downs.
+2. As the team is not complete today, we will plan the upcoming sprint on Monday, December 30.
+3. We agreed to do our Stakeholder presentation this monday december 30 at 10.20.
+4. The role of Scrum master was assigned to Jennifer.
+5. Due to Christmas holidays, the team has taken some time off and no changes have been made to the Trello board.
