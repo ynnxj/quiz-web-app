@@ -50,8 +50,8 @@
 4. Discussed how we are going to work during christmas.
 
 # Swift Team Meeting - December 23, 2024
-1. 
-2. 
+1. We discussed how to handle the end of the game. Specifically, we considered whether to use a loop or an event listener to stop the game and display the results.
+2. Further discussion will take place to decide the most efficient approach, but both options (loop and event listener) are on the table.
 
 # Swift Team Meeting - December 27, 2024
 1. 

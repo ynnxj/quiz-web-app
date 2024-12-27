@@ -11,3 +11,5 @@ _Trello board on December 18, 2024._ ![Trello board on 18.dec.2024]()
 _Trello board on December 19, 2024._ ![Trello board on 19.dec.2024](./public/trello-logs/swift-group-log-19.png)
 
 _Trello board on December 20, 2024._ ![Trello board on 20.dec.2024]()
+
+_Trello board on December 23, 2024._ ![Trello board on 19.dec.2024](./public/trello-logs/swift-group-log-23-dec.jpg)
