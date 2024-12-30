@@ -1,5 +1,6 @@
 import { Questions, questionList } from './questions'
 import { printHtml, restartQuiz } from './createCard'
+import { startTimer } from './timer.ts'
 
 // Arrays to store questions
 let firstQuestions: Questions[] = []
@@ -41,7 +42,7 @@ export function handleQuestions(set: 'start' | 'restart') {
         } else {
             questionList.push(...remainingQuestions)
         }
-        isFirstSetNext = false
+        isFirstSetNext = !isFirstSetNext
     }
     
     printHtml()
@@ -60,6 +61,7 @@ export function setupEventListeners() {
     if (startButton) {
         startButton.addEventListener('click', () => {
             handleQuestions('start')
+            startTimer()
         });
     }
 
