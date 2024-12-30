@@ -1,6 +1,6 @@
 import './styles/styles.scss'
-import { printHtml } from './modules/createCard'
 import { displayUserPoints } from './modules/displayUserPoints'
+import { setupEventListeners } from './modules/setUpQuestions'
 
-printHtml()
 displayUserPoints()
+setupEventListeners()
