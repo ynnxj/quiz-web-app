@@ -1,5 +1,5 @@
-export let quizTime = 0
-export let userTime: number | undefined
+export let quizTime = 0 // Counter
+export let userTime: number | undefined // Final time
 let timerInterval: number | undefined
 
 
@@ -35,7 +35,6 @@ export function stopTimer() {
     userTime = quizTime
     quizTime = 0
     updateTimerDisplay()
-    displayFinalUserTime()
     return userTime
 }
 
@@ -43,23 +42,11 @@ export function stopTimer() {
  * Function for displaying the count up in minutes and seconds.
  */
 export function updateTimerDisplay() {
+    if (userTime === undefined) {
+        return; // If userTime is not defined, do nothing
+    }
     const countUpTimer = document.querySelector('#count-up-timer') as HTMLElement
     let minutes = Math.floor(quizTime/60)
     let seconds = quizTime % 60
     countUpTimer.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
-}
-
-/**
- * Will display users final time.
- */
-export function displayFinalUserTime() {
-    if (userTime === undefined) {
-        return; // If userTime is not defined, do nothing
-    }
-    let minutes = Math.floor(userTime / 60)
-    let seconds = userTime % 60
-    const displayTime = document.querySelector<HTMLElement>('#display-time')
-    if (displayTime) {
-        displayTime.innerHTML = `Din sluttid blev ${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
-    }
 }

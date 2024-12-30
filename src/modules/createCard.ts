@@ -2,6 +2,7 @@
 import { checkAnswer, getScore, resetUserScore, userScore} from './checkAnswers'
 import { Questions, questionList } from './questions'
 import { displayUserPoints } from './displayUserPoints'
+import { userTime } from './timer'
 
 let currentQuestionIndex:number = 0
 let selectedAnswer:string = ''
@@ -81,34 +82,41 @@ export function printHtml() {
     }
 }
 
-function displayEndCard() {
+/**
+ * This function will print the end card showing the users final score, time and
+ * a restart button.
+ */
+export function displayEndCard() {
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
+        const minutes = Math.floor((userTime ?? 0) / 60)
+        const seconds = (userTime ?? 0) % 60
+        const formattedUserTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
+
         container.innerHTML = `
             <div class="start-end-card">
                 <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
                 <h2>Disney Quiz</h2>
                 <section class="card-info">
-                <div>
-                    <p id="card-question-score">Questions</p>
-                    <hr>
-                    <p id="card-number-percent">20</p>
-                </div>
-                <div>
-                    <p id="card-time-txt">Max Time</p>
-                    <p id="card-time">10:00</p>
-                </div>
-                <div>
-                    <p id="card-points-txt">Max Points</p>
-                    <hr>
-                    <p id="card-points">${userScore}/20</p>
-                </div>
-                <div>
-                    <button class="restart-btn" id="restartButton">Play Again</button>
-                </div>
-                
-          </section>
-        </div>
+                    <div>
+                        <p id="card-question-score">Your Score</p>
+                        <hr>
+                        <p id="card-number-percent">%</p>
+                    </div>
+                    <div>
+                        <p id="card-time-txt">Your Time</p>
+                        <p id="card-time">${formattedUserTime}</p>
+                    </div>
+                    <div>
+                        <p id="card-points-txt">Your Points</p>
+                        <hr>
+                        <p id="card-points">${userScore}/20</p>
+                    </div>
+                    <div>
+                        <button class="restart-btn" id="restartButton">Play Again</button>
+                    </div>
+                </section>
+            </div>
         `;
         const restartButton = document.getElementById('restartButton');
         if (restartButton) {
