@@ -2,7 +2,7 @@
 import { checkAnswer, getScore, resetUserScore, userScore} from './checkAnswers'
 import { Questions, questionList } from './questions'
 import { displayUserPoints } from './displayUserPoints'
-import { userTime } from './timer'
+import { userTime, startTimer, stopTimer } from './timer'
 import { handleQuestions } from './setUpQuestions'
 
 let currentQuestionIndex:number = 0
@@ -48,6 +48,7 @@ export function navigateQuestion() {
         printHtml();
     } else {
         //U can make function here that calls the end card
+        stopTimer()
         displayEndCard();
     }
 }
@@ -132,6 +133,7 @@ export function restartQuiz() {
     currentQuestionIndex = 0;
     selectedAnswer = '';
     resetUserScore();
+    startTimer()
     handleQuestions('restart'); // Display second set of questions
     printHtml(); //Start over with the first question
 }
