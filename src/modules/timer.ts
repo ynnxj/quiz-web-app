@@ -42,10 +42,10 @@ export function stopTimer() {
  * Function for displaying the count up in minutes and seconds.
  */
 export function updateTimerDisplay() {
-    if (userTime === undefined) {
-        return; // If userTime is not defined, do nothing
-    }
     const countUpTimer = document.querySelector('#count-up-timer') as HTMLElement
+    if (!countUpTimer) {
+    return;
+}
     let minutes = Math.floor(quizTime/60)
     let seconds = quizTime % 60
     countUpTimer.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
