@@ -75,7 +75,7 @@ export function navigateQuestion() {
 }
 
 //Handles click event for answer option buttons 
-export function handleOptionClick(event: Event){
+export function handleOptionClick(event: Event | KeyboardEvent){
 
     //Get the target element of the click and cast as htmlelement 
     const target = event.target as HTMLElement;
@@ -96,6 +96,7 @@ export function handleOptionClick(event: Event){
             nextButton.removeAttribute('disabled')
         }
     }
+    
 }
 
 export function printHtml() {
@@ -105,9 +106,19 @@ export function printHtml() {
         container.innerHTML = htmlContent;
     }
 
-    const optionButton = document.querySelectorAll('.option-btn')
+    const optionButton = document.querySelectorAll<HTMLButtonElement>('.option-btn')
     optionButton.forEach((button) => {
         button.addEventListener('click', handleOptionClick)
+    })
+
+    function keyEvent (event: KeyboardEvent) {
+        if (event.key === ' ' || event.key === 'Enter') {
+            handleOptionClick(event);
+        }
+    }
+
+    optionButton.forEach((button: HTMLButtonElement) => {
+        button.addEventListener('keydown', (e)  => keyEvent(e))
     })
 
     const nextButton = document.getElementById('nextButton')
