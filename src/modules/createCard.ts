@@ -92,7 +92,9 @@ export function displayEndCard() {
         const minutes = Math.floor((userTime ?? 0) / 60)
         const seconds = (userTime ?? 0) % 60
         const formattedUserTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
-
+        // % counter
+        const maxQuestions = 20;
+        const correctPercentage = ((userScore ?? 0)/ maxQuestions)* 100; // counts the % of correct answer 
         container.innerHTML = `
             <div class="start-end-card">
                 <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
@@ -101,7 +103,7 @@ export function displayEndCard() {
                     <div>
                         <p id="card-question-score">Your Score</p>
                         <hr>
-                        <p id="card-number-percent">%</p>
+                        <p id="card-number-percent">${correctPercentage.toFixed(2)}%</p>
                     </div>
                     <div>
                         <p id="card-time-txt">Your Time</p>
