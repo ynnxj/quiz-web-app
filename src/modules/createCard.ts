@@ -1,10 +1,10 @@
 
-import { checkAnswer, getScore, userScore } from "./checkAnswers"
-import { Questions, questionList } from "./questions"
-import { displayUserPoints } from "./displayUserPoints"
+import { checkAnswer, getScore, userScore } from './checkAnswers'
+import { Questions, questionList } from './questions'
+import { displayUserPoints } from './displayUserPoints'
 
 let currentQuestionIndex:number = 0
-let selectedAnswer:string = ""
+let selectedAnswer:string = ''
 
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
@@ -12,7 +12,7 @@ export function createHtml(questionList: Questions[], index: number){
     const options = Object.keys(question.answer)
     .map((option) => `<li><button class="option-btn">${option}</button></li>`)
     //ensure no commas or seperator are included
-    .join("");
+    .join('');
     return `
         <div class="question-container">
             <div class="question-image-container">
@@ -31,7 +31,6 @@ export function createHtml(questionList: Questions[], index: number){
     `;
 }
 
-
 export function navigateQuestion() {
     const currentQuestion = questionList[currentQuestionIndex]
     
@@ -39,13 +38,14 @@ export function navigateQuestion() {
     if(selectedAnswer && checkAnswer(currentQuestion, selectedAnswer)){
         getScore()
     }
-    selectedAnswer = "";
+    selectedAnswer = '';
 
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
     } else {
-        alert(`You have reached the end of the questions! \n\n Your score is: ${userScore}`);
+        //U can make function here that calls the end card
+        displayEndCard();
     }
 }
 
@@ -56,8 +56,8 @@ export function handleOptionClick(event: Event){
     const target = event.target as HTMLElement;
 
     //Check if target element is a button with the right class
-    if(target.tagName === "BUTTON" && target.classList.contains("option-btn")){
-        selectedAnswer = target.textContent || ""
+    if(target.tagName === 'BUTTON' && target.classList.contains('option-btn')){
+        selectedAnswer = target.textContent || ''
     }
 }
 
@@ -68,9 +68,9 @@ export function printHtml() {
         container.innerHTML = htmlContent;
     }
 
-    const optionButton = document.querySelectorAll(".option-btn")
+    const optionButton = document.querySelectorAll('.option-btn')
     optionButton.forEach((button) => {
-        button.addEventListener("click", handleOptionClick)
+        button.addEventListener('click', handleOptionClick)
     })
 
     const nextButton = document.getElementById('nextButton')
@@ -78,4 +78,43 @@ export function printHtml() {
         nextButton.addEventListener('click', navigateQuestion)
         displayUserPoints()
     }
+}
+
+function displayEndCard() {
+    const container = document.querySelector<HTMLElement>('.card-container');
+    if (container) {
+        container.innerHTML = `
+            <div class="start-end-card">
+                <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
+                <h2>Disney Quiz</h2>
+                <section class="card-info">
+                <div>
+                    <p id="card-question-score">Questions</p>
+                    <hr>
+                    <p id="card-number-percent">20</p>
+                </div>
+                <div>
+                    <p id="card-time-txt">Max Time</p>
+                    <p id="card-time">10:00</p>
+                </div>
+                <div>
+                    <p id="card-points-txt">Max Points</p>
+                    <hr>
+                    <p id="card-points">${userScore}/20</p>
+                </div>
+                <button class="restart-btn" id="restartButton">Play Again</button>
+          </section>
+        </div>
+        `;
+        const restartButton = document.getElementById('restartButton');
+        if (restartButton) {
+            restartButton.addEventListener('click', restartQuiz);
+        }
+    }
+}
+
+function restartQuiz() {
+    currentQuestionIndex = 0;
+    selectedAnswer = ''; 
+    printHtml(); //Start over with the first question
 }
