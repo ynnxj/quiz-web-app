@@ -42,7 +42,7 @@ export function navigateQuestion() {
         getScore()
     }
     selectedAnswer = '';
-
+    displayUserPoints(); // update point display on every next button
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
