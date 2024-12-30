@@ -59,3 +59,11 @@
 3. We agreed to do our Stakeholder presentation this monday december 30 at 10.20.
 4. The role of Scrum master was assigned to Jennifer.
 5. Due to Christmas holidays, the team has taken some time off and no changes have been made to the Trello board.
+
+# Swift Team Meeting - December 30, 2024
+1. Added and assigned new tasks to Trello board.
+2. Start and End cards in progress.
+3. Styling in progress.
+4. Fix a11y and code validation.
+5. Create function that triggers the End card.
+6. Stakeholder presentation done. Feedback recieved and noted.
