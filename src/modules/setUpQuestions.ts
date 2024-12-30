@@ -32,7 +32,7 @@ export function handleQuestions(set: 'start' | 'restart') {
         questionList.length = 0
         questionList.push(...firstQuestions)
         isFirstSetNext = false
-
+        
     } else if (set === 'restart') {
         questionList.length = 0
 

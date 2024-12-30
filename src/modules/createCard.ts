@@ -94,7 +94,7 @@ export function displayEndCard() {
         const seconds = (userTime ?? 0) % 60
         const formattedUserTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
         // % counter
-        const maxQuestions = 20;
+        const maxQuestions = 10;
         const correctPercentage = ((userScore ?? 0)/ maxQuestions)* 100; // counts the % of correct answer 
         container.innerHTML = `
             <div class="start-end-card">
@@ -113,7 +113,7 @@ export function displayEndCard() {
                     <div>
                         <p id="card-points-txt">Your Points</p>
                         <hr>
-                        <p id="card-points">${userScore}/20</p>
+                        <p id="card-points">${userScore}/10</p>
                     </div>
                     <div>
                         <button class="restart-btn" id="restart-button">Play Again</button>
