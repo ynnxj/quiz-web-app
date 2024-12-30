@@ -22,4 +22,9 @@ export function getScore(): number {
   return userScore
 }
 
+// function that sets the score to 0
+export function resetUserScore(){
+  userScore = 0;
+}
+
 //When the user has picked the right answer and then choose another the point is til there, pusha score when next button is clicked 
