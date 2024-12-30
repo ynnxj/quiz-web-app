@@ -3,6 +3,7 @@ import { checkAnswer, getScore, resetUserScore, userScore} from './checkAnswers'
 import { Questions, questionList } from './questions'
 import { displayUserPoints } from './displayUserPoints'
 import { userTime } from './timer'
+import { handleQuestions } from './setUpQuestions'
 
 let currentQuestionIndex:number = 0
 let selectedAnswer:string = ''
@@ -113,12 +114,12 @@ export function displayEndCard() {
                         <p id="card-points">${userScore}/20</p>
                     </div>
                     <div>
-                        <button class="restart-btn" id="restartButton">Play Again</button>
+                        <button class="restart-btn" id="restart-button">Play Again</button>
                     </div>
                 </section>
             </div>
         `;
-        const restartButton = document.getElementById('restartButton');
+        const restartButton = document.getElementById('restart-button');
         if (restartButton) {
             restartButton.addEventListener('click', restartQuiz);
         }
@@ -127,9 +128,10 @@ export function displayEndCard() {
 
 
 
-function restartQuiz() {
+export function restartQuiz() {
     currentQuestionIndex = 0;
     selectedAnswer = '';
     resetUserScore();
+    handleQuestions('restart'); // Display second set of questions
     printHtml(); //Start over with the first question
 }
