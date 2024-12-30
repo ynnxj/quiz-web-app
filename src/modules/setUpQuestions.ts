@@ -41,7 +41,7 @@ export function handleQuestions(set: 'start' | 'restart') {
         } else {
             questionList.push(...remainingQuestions)
         }
-        isFirstSetNext = false
+        isFirstSetNext = !isFirstSetNext
     }
     
     printHtml()
