@@ -1,10 +1,11 @@
 
-import { checkAnswer, getScore, userScore } from './checkAnswers'
+import { checkAnswer, getScore, resetUserScore, userScore} from './checkAnswers'
 import { Questions, questionList } from './questions'
 import { displayUserPoints } from './displayUserPoints'
 
 let currentQuestionIndex:number = 0
 let selectedAnswer:string = ''
+
 
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
@@ -102,7 +103,10 @@ function displayEndCard() {
                     <hr>
                     <p id="card-points">${userScore}/20</p>
                 </div>
-                <button class="restart-btn" id="restartButton">Play Again</button>
+                <div>
+                    <button class="restart-btn" id="restartButton">Play Again</button>
+                </div>
+                
           </section>
         </div>
         `;
@@ -113,8 +117,11 @@ function displayEndCard() {
     }
 }
 
+
+
 function restartQuiz() {
     currentQuestionIndex = 0;
-    selectedAnswer = ''; 
+    selectedAnswer = '';
+    resetUserScore();
     printHtml(); //Start over with the first question
 }

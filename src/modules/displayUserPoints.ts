@@ -7,3 +7,4 @@ export const displayUserPoints = () => {
         userPoints.textContent = `${userScore}pts`
     }
 }
+
