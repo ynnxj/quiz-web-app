@@ -101,7 +101,7 @@
     .question-image-container {
         background-color: darken($background,5%);
         height: 100%;
-        margin-bottom: 50px;
+        margin-bottom: 20px;
         padding: 2rem;
         border: 1px solid $text;
         border-radius: 10px;
@@ -185,29 +185,26 @@
     }
 
     #nextButton{
-       margin: 2rem;
-       background: $text;
-       box-shadow: 1px 1px 10px rgb(104, 101, 101);
-       width: 30%;
-       height: 4rem;
-       color: $background;
-       font-size: 3rem; 
-       font-family:$header-font;
-       border: 1px solid $text;
+        margin: 0.5rem;
+        background: $text;
+        box-shadow: 1px 1px 10px rgb(104, 101, 101);
+        width: 30%;
+        height: 60px;
+        color: $background;
+        font-size: 2.5rem; 
+        font-family:$header-font;
+        border: 1px solid $text;
         border-radius: 10px;
-
         &:hover {
             background-color: darken($background, 10%);
             color: $text;
         }
-
         &:disabled {
             background-color: #d3af8f; 
             color: #6f5e5e;
             opacity: 0.6;
             cursor: not-allowed; 
         }
-
     }
 
     @media(max-width: 768px){
