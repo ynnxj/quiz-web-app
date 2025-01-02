@@ -143,6 +143,11 @@
                     background-color: darken($background, 5%);
                     color: $text;
                 } 
+
+                &.correct {
+                    background-color: #166303;
+                    color: #fff;
+                }
             }
         }
 
