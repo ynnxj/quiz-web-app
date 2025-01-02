@@ -43,14 +43,20 @@ export function navigateQuestion() {
     }
     selectedAnswer = '';
     displayUserPoints(); // update point display on every next button
-    if (currentQuestionIndex < questionList.length - 1) {
-        currentQuestionIndex++;
-        printHtml();
-    } else {
-        //U can make function here that calls the end card
-        stopTimer()
-        displayEndCard();
-    }
+    
+    /**
+     * The delay will give the user enough time to see wich answer is correct.
+     */
+    setTimeout(() => {
+        if (currentQuestionIndex < questionList.length - 1) {
+            currentQuestionIndex++;
+            printHtml();
+        } else {
+            //U can make function here that calls the end card
+            stopTimer()
+            displayEndCard();
+        }
+    }, 1500)
 }
 
 //Handles click event for answer option buttons 
