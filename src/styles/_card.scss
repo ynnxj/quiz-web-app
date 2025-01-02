@@ -100,7 +100,13 @@
             width: 100%;
             display: flex;
             justify-content: center;
+            .option-btn{
+                &.active{
+                    background-color: #8f000c;
+                } 
+            }
         }
+
     }
 
     .navigation-buttons {
@@ -132,8 +138,6 @@
             background-color: #8f000c;
         }
 
-        &:focus {
-            background-color: #8f000c;
-        }
+
     }
 }

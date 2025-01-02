@@ -42,7 +42,7 @@ export function navigateQuestion() {
         getScore()
     }
     selectedAnswer = '';
-
+    displayUserPoints(); // update point display on every next button
     if (currentQuestionIndex < questionList.length - 1) {
         currentQuestionIndex++;
         printHtml();
@@ -61,6 +61,12 @@ export function handleOptionClick(event: Event){
 
     //Check if target element is a button with the right class
     if(target.tagName === 'BUTTON' && target.classList.contains('option-btn')){
+
+        // adds Active class to option button
+        const optionButtons = document.querySelectorAll('.option-btn');
+        optionButtons.forEach(button => button.classList.remove('active'));
+        target.classList.add('active');
+
         selectedAnswer = target.textContent || ''
     }
 }
@@ -128,8 +134,6 @@ export function displayEndCard() {
         }
     }
 }
-
-
 
 export function restartQuiz() {
     currentQuestionIndex = 0;
