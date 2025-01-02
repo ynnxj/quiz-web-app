@@ -43,14 +43,16 @@ export function navigateQuestion() {
     }
     selectedAnswer = '';
 
-    if (currentQuestionIndex < questionList.length - 1) {
-        currentQuestionIndex++;
-        printHtml();
-    } else {
-        //U can make function here that calls the end card
-        stopTimer()
-        displayEndCard();
-    }
+    setTimeout(() => {
+        if (currentQuestionIndex < questionList.length - 1) {
+            currentQuestionIndex++;
+            printHtml();
+        } else {
+            //U can make function here that calls the end card
+            stopTimer()
+            displayEndCard();
+        }
+    }, 1500)
 }
 
 //Handles click event for answer option buttons 
@@ -63,6 +65,16 @@ export function handleOptionClick(event: Event){
     if(target.tagName === 'BUTTON' && target.classList.contains('option-btn')){
         selectedAnswer = target.textContent || ''
     }
+
+    const currentQuestion = questionList[currentQuestionIndex];
+    const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
+
+    if (isCorrect) {
+        target.classList.add('correct')
+    }
+
+    const optionBtns = document.querySelectorAll('.option-btn')
+    optionBtns.forEach((btn) => btn.setAttribute('disabled', 'true'))
 }
 
 export function printHtml() {
