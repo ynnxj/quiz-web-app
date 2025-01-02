@@ -130,10 +130,10 @@ export function displayEndCard() {
                         <hr>
                         <p id="card-points">${userScore}/10</p>
                     </div>
-                    <div>
-                        <button class="restart-btn" id="restart-button">Play Again</button>
-                    </div>
                 </section>
+            </div>
+            <div class="end-button-box">
+                <button class="restart-btn" id="restart-button">Play Again</button>
             </div>
         `;
         const restartButton = document.getElementById('restart-button');

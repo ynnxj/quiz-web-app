@@ -7,6 +7,7 @@
     padding: 10px 10px;
     margin: 0 auto;
     font-family: $main-font;
+    justify-content: center;
     align-items: center;
     .start-end-card {
         border: 1px solid $text;
@@ -53,6 +54,44 @@
                 height: 1px;
                 background-color: $text;
                 margin: 0 10px;
+            }
+        }
+    }
+    .start-button-box{
+        margin-top: 16px;
+        .start-button{
+            background-color: $text;
+            border: 1px solid $text;
+            border-radius: 10px;
+            cursor: pointer;
+            color: $background;
+            width: 380px;
+            height: 55px;
+            font-size: 1.9rem;
+            font-weight:bolder;
+            font-family: $main-font;
+            &:hover{
+                background-color: darken($background, 10%);
+                color: $text;
+            }
+        }
+    }
+    .end-button-box{
+        margin-top: 16px;
+        .restart-btn{
+            background-color: $text;
+            border: 1px solid $text;
+            border-radius: 10px;
+            cursor: pointer;
+            color: $background;
+            width: 380px;
+            height: 55px;
+            font-size: 1.9rem;
+            font-weight:bolder;
+            font-family: $main-font;
+            &:hover{
+                background-color: darken($background, 10%);
+                color: $text;
             }
         }
     }
