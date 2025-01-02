@@ -1,49 +1,56 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Mouse+Memoirs&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./src/styles/styles.scss" />
-    <title>Swift-Group</title>
-  </head>
-  <body>
-    <main>
-      <header>
-        <h1>Swift Quiz</h1>
-      </header>
-      <div class="timer-pts">
-        <span id="count-up-timer" class="count-up-timer">00:00</span>
-        <span id="points-btn" class="points-btn">0pts</span>
-      </div>
-      <div class="card-container">
-        <div class="start-end-card">
-          <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
-          <h2>Disney Quiz</h2>
-          <section class="card-info">
-            <div>
-              <p id="card-question-score">Questions</p>
-              <hr>
-              <p id="card-number-percent">10</p>
-            </div>
-            <div>
-              <p id="card-time-txt">Max Time</p>
-              <p id="card-time">10:00</p>
-            </div>
-            <div>
-              <p id="card-points-txt">Max Points</p>
-              <hr>
-              <p id="card-points">10/10</p>
-            </div>
-          </section>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Dekko&family=Mouse+Memoirs&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./src/styles/styles.scss" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+  <title>Swift-Group</title>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>Swift Quiz</h1>
+    </header>
+    <div class="timer-pts">
+      <span id="count-up-timer" class="count-up-timer">00:00</span>
+      <span id="points-btn" class="points-btn">0pts</span>
+    </div>
+    <div class="card-container">
+      <div class="start-end-card">
+        <img src="public/images/disney_first.webp" height="700" width="1400"
+          alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
+        <h2>Disney Quiz</h2>
+        <section class="card-info">
           <div>
-            <button class="start-button" id="start-button">Start</button>
+            <p id="card-question-score">Questions</p>
+            <hr>
+            <p id="card-number-percent">10</p>
           </div>
+          <div>
+            <p id="card-time-txt">Max Time</p>
+            <p id="card-time">10:00</p>
+          </div>
+          <div>
+            <p id="card-points-txt">Max Points</p>
+            <hr>
+            <p id="card-points">10/10</p>
+          </div>
+        </section>
+        <div>
+          <button class="start-button" id="start-button">Start</button>
         </div>
       </div>
-    </main>
-    <script type="module" src="src/main.ts"></script>
-  </body>
+    </div>
+  </main>
+  <script type="module" src="src/main.ts"></script>
+</body>
+
 </html>
