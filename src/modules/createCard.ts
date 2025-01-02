@@ -23,7 +23,7 @@ export function createHtml(questionList: Questions[], index: number){
             <div class="question-image-container">
                 <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
                 <div class="question-text">
-                    <h2 aria-live="polite" tabindex="-1">${question.question}</h2>
+                    <h2 id="question-${index}" aria-live="polite" tabindex="-1">${question.question}</h2>
                 </div> 
             </div>
             <div class="options">
@@ -104,6 +104,9 @@ export function printHtml() {
     if (container) {
         container.innerHTML = htmlContent;
     }
+    // Focus the question text for screenreaders.
+    const questionText = document.getElementById(`question-${currentQuestionIndex}`)
+    questionText?.focus()
 
     const optionButton = document.querySelectorAll('.option-btn')
     optionButton.forEach((button) => {
