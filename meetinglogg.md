@@ -67,3 +67,11 @@
 4. Fix a11y and code validation.
 5. Create function that triggers the End card.
 6. Stakeholder presentation done. Feedback recieved and noted.
+
+# Swift Team Meeting - January 2, 2025
+1. Discussed what there is to fix and/or add to quiz app.
+2. Function that triggers the end card w/ replay button is done.
+3. Questions split is done.
+4. Timer is done.
+5. Create function that shows the correct answer when clicking next button.
+6. Fix so that the next button is locked until there is an answer selected.
