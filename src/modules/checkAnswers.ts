@@ -1,9 +1,7 @@
 import { Questions } from "./questions"
 
-//Declare globar variable to track users's score
 export let userScore = 0;
 
-//Function to check if the selected answer is correct
 export function checkAnswer(question: Questions, selectedAnswer: string): boolean {
   //Checks if selected answer exists
   const isCorrect = question.answer[selectedAnswer] || false
@@ -26,5 +24,3 @@ export function getScore(): number {
 export function resetUserScore(){
   userScore = 0;
 }
-
-//When the user has picked the right answer and then choose another the point is til there, pusha score when next button is clicked 

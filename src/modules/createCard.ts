@@ -46,13 +46,19 @@ export function navigateQuestion() {
     }
     selectedAnswer = '';
     displayUserPoints(); // update point display on every next button
-    if (currentQuestionIndex < questionList.length - 1) { // if there is more questions increments the index and display next question
-        currentQuestionIndex++;
-        printHtml();
-    } else {
-        stopTimer()
-        displayEndCard();// if there is no more questions prints out the end card
-    }
+    /**
+     * The delay will give the user enough time to see wich answer is correct.
+     */
+    setTimeout(() => {
+        if (currentQuestionIndex < questionList.length - 1) {
+            currentQuestionIndex++;
+            printHtml();
+        } else {
+            //U can make function here that calls the end card
+            stopTimer()
+            displayEndCard();
+        }
+    }, 1500)
 }
 
 //Handles click event for answer option buttons 

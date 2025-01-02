@@ -1,0 +1,294 @@
+.card-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px;
+  margin: 0 auto;
+  font-family: "Outfit", serif;
+}
+.card-container .start-end-card {
+  border: 1px solid #F5DEB3;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.card-container .start-end-card img {
+  height: 450px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card-container .start-end-card h2 {
+  text-align: center;
+  font-weight: 400;
+  font-size: 2rem;
+  padding-top: 50px;
+}
+.card-container .start-end-card .card-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+  padding-bottom: 20px;
+}
+.card-container .start-end-card .card-info div p:last-child {
+  font-size: 1.5rem;
+  font-weight: 580;
+}
+.card-container .start-end-card .card-info p:nth-child(2) {
+  text-align: center;
+}
+.card-container .start-end-card .card-info p:nth-child(1),
+.card-container .start-end-card .card-info p:nth-child(3) {
+  text-align: center;
+  padding: 3px 10px;
+  margin: 0 10px;
+}
+.card-container .start-end-card .card-info hr {
+  border: none;
+  height: 1px;
+  background-color: #F5DEB3;
+  margin: 0 10px;
+}
+@media (max-width: 768px) {
+  .card-container .start-end-card img {
+    height: 300px;
+  }
+  .card-container .start-end-card h2 {
+    font-size: 1.5rem;
+    padding-top: 30px;
+  }
+  .card-container .start-end-card .card-info {
+    font-size: 1.2rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .card-container .start-end-card .card-info div p:last-child {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 480px) {
+  .card-container {
+    padding: 5px;
+  }
+  .card-container .start-end-card img {
+    height: 200px;
+  }
+  .card-container .start-end-card h2 {
+    font-size: 1.2rem;
+  }
+  .card-container .start-end-card .card-info {
+    font-size: 1rem;
+  }
+}
+
+.question-container .question-image-container {
+  background-color: #5a0209;
+  height: 100%;
+  margin-bottom: 50px;
+  padding: 2rem;
+  border: 1px solid #F5DEB3;
+  border-radius: 10px;
+}
+.question-container .question-image-container img {
+  height: 450px;
+  border-radius: 10px;
+  width: 100%;
+  -o-object-fit: scale-down;
+     object-fit: scale-down;
+}
+.question-container .question-image-container .question-text {
+  width: 100%;
+  height: 50%;
+  display: grid;
+}
+.question-container .question-image-container .question-text h2 {
+  text-align: center;
+  font-family: "Outfit", serif;
+  margin-top: 10px;
+  font-size: 2rem;
+  text-shadow: 1px 1px 10px rgb(33, 1, 1);
+}
+.question-container .options {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  list-style-type: none;
+  width: 100%;
+  height: 150px;
+  margin-top: 10px;
+}
+.question-container .options li {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.question-container .options li .option-btn.active {
+  background-color: #5a0209;
+  color: #F5DEB3;
+}
+.question-container .navigation-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 5px;
+}
+.question-container .navigation-buttons button {
+  width: 50%;
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.question-container button {
+  background-color: #F5DEB3;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  color: #73020C;
+  width: 70%;
+  height: 45px;
+  font-size: 1.5rem;
+  font-weight: bolder;
+  font-family: "Outfit", serif;
+}
+.question-container #nextButton {
+  margin: 2rem;
+  background: #F5DEB3;
+  box-shadow: 1px 1px 10px rgb(104, 101, 101);
+  width: 30%;
+  height: 4rem;
+  color: #73020C;
+  font-size: 3rem;
+  font-family: "Mouse Memoirs";
+  border: 1px solid #F5DEB3;
+  border-radius: 10px;
+}
+.question-container #nextButton:hover {
+  background-color: #410107;
+  color: #F5DEB3;
+}
+@media (max-width: 768px) {
+  .question-container .question-image-container {
+    padding: 1rem;
+  }
+  .question-container .question-image-container img {
+    height: 300px;
+  }
+  .question-container .question-image-container .question-text {
+    font-size: 1.5rem;
+  }
+  .question-container .options {
+    gap: 5px;
+    height: auto;
+  }
+  .question-container .options li .option-btn {
+    font-size: 1.2rem;
+  }
+  .question-container #nextButton {
+    width: 50%;
+    height: 3rem;
+    font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .question-container .question-image-container {
+    padding: 0.5rem;
+  }
+  .question-container .question-image-container img {
+    height: 200px;
+  }
+  .question-container .question-image-container .question-text h2 {
+    font-size: 1.2rem;
+  }
+  .question-container .options {
+    gap: 3px;
+  }
+  .question-container .options li .option-btn {
+    font-size: 1rem;
+  }
+  .question-container #nextButton {
+    width: 70%;
+    height: 2.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.timer-pts {
+  display: flex;
+  justify-content: space-between;
+}
+
+.points-btn, .count-up-timer {
+  border: 1px solid #F5DEB3;
+  border-radius: 0.5rem;
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  padding: 0.2rem 1rem 0.2rem 1rem;
+}
+
+body {
+  background-color: #73020C;
+  color: #F5DEB3;
+  width: 100vw;
+}
+
+header {
+  border-bottom: 1px solid #F5DEB3;
+}
+header h1 {
+  display: flex;
+  justify-content: center;
+  font-family: "Mouse Memoirs";
+  font-size: 3.5rem;
+  font-weight: 400;
+  margin: 10px;
+}/*# sourceMappingURL=styles.css.map */
