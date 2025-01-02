@@ -23,7 +23,7 @@ export function createHtml(questionList: Questions[], index: number){
             <div class="question-image-container">
                 <img src="${question.img.url}" alt="${question.img.alt}" class="questionImage">
                 <div class="question-text">
-                    <h2>${question.question}</h2>
+                    <h2 aria-live="polite" tabindex="-1">${question.question}</h2>
                 </div> 
             </div>
             <div class="options">
