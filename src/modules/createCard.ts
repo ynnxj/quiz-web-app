@@ -9,6 +9,8 @@ let currentQuestionIndex:number = 0
 let selectedAnswer:string = ''
 
 
+
+// generates HTML for display questions + answer options
 export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
     //Extract answer options from answer property
@@ -34,6 +36,7 @@ export function createHtml(questionList: Questions[], index: number){
     `;
 }
 
+// 
 export function navigateQuestion() {
     const currentQuestion = questionList[currentQuestionIndex]
     
@@ -43,13 +46,12 @@ export function navigateQuestion() {
     }
     selectedAnswer = '';
     displayUserPoints(); // update point display on every next button
-    if (currentQuestionIndex < questionList.length - 1) {
+    if (currentQuestionIndex < questionList.length - 1) { // if there is more questions increments the index and display next question
         currentQuestionIndex++;
         printHtml();
     } else {
-        //U can make function here that calls the end card
         stopTimer()
-        displayEndCard();
+        displayEndCard();// if there is no more questions prints out the end card
     }
 }
 
@@ -134,6 +136,7 @@ export function displayEndCard() {
         }
     }
 }
+
 
 export function restartQuiz() {
     currentQuestionIndex = 0;

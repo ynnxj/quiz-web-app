@@ -1,13 +1,13 @@
 @use './globals.scss' as *;
 
 .card-container {
-    //width: 750px;
+    width: 750px;
     display: flex;
     flex-direction: column;
     padding: 10px 10px;
     margin: 0 auto;
     font-family: $main-font;
-
+    align-items: center;
     .start-end-card {
         border: 1px solid $text;
         border-radius: 10px;
@@ -54,6 +54,20 @@
                 background-color: $text;
                 margin: 0 10px;
             }
+        }
+    }
+    .start-button-box{
+        margin-top: 16px;
+        .start-button{
+            background-color: $background;
+            border: 1px solid $text;
+            border-radius: 10px;
+            cursor: pointer;
+            color: $text;
+            width: 280px;
+            height: 45px;
+            font-size: 1.3rem;
+            font-family: $main-font;
         }
     }
 }
