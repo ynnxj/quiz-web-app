@@ -10,6 +10,11 @@ body {
     width: 100vw;
 }
 
+button:focus {
+    outline: 3px solid #0a80f6; 
+    outline-offset: 2px;
+}
+
 
 header {
     border-bottom: 1px solid $text;
@@ -22,4 +27,8 @@ header {
         font-weight: 400;
         margin: 10px;
     }
+}
+
+.sr-only {
+    @include sr-only;
 }
