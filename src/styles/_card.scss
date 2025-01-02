@@ -23,13 +23,13 @@
             text-align: center;
             font-weight: 400;
             font-size: 2rem;
-            padding-top: 5px;
+            padding-top: 50px;
         }
 
         .card-info {
             display: flex;
             justify-content: space-between;
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             padding-bottom: 20px;
 
             div p:last-child {
@@ -56,12 +56,50 @@
             }
         }
     }
+    @media(max-width: 768px){
+        .start-end-card{
+            img{
+                height: 300px;
+            }
+            h2{
+                font-size: 1.5rem;
+                padding-top: 30px;
+            }
+            .card-info{
+                font-size: 1.2rem;
+                flex-direction: column;
+                align-items: center;
+
+                div p:last-child{
+                    font-size: 1.3rem;
+                }
+            }
+        }
+    }
+
+    @media(max-width: 480px){
+        padding: 5px;
+
+        .start-end-card{
+            img{
+                height: 200px;
+            }
+            h2{
+                font-size: 1.2rem;
+            }
+            .card-info{
+                font-size: 1rem;
+            }
+        }
+    }
 }
 
 .question-container {
     .question-image-container {
-        height: 500px;
-        margin-bottom: 5px;
+        background-color: darken($background,5%);
+        height: 100%;
+        margin-bottom: 50px;
+        padding: 2rem;
         border: 1px solid $text;
         border-radius: 10px;
         
@@ -74,15 +112,15 @@
         
         .question-text {
             width: 100%;
-            height: 50px;
-            border-top: 1px solid $text;
+            height: 50%;
             display: grid;
             
             h2 {
                 text-align: center;
-                height: 100%;
                 font-family: $main-font;
-                margin-top: 5px;
+                margin-top: 10px;
+                font-size: 2rem;
+                text-shadow: 1px 1px 10px rgb(33, 1, 1);
             }
         }
     }
@@ -90,7 +128,7 @@
     .options {
         display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 7px;
         list-style-type: none;
         width: 100%;
         height: 150px;
@@ -102,7 +140,8 @@
             justify-content: center;
             .option-btn{
                 &.active{
-                    background-color: #8f000c;
+                    background-color: darken($background, 5%);
+                    color: $text;
                 } 
             }
         }
@@ -124,20 +163,92 @@
     }
 
     button {
-        background-color: $background;
-        border: 1px solid $text;
+        background-color: $text;
+        border: 1px solid black;
         border-radius: 10px;
         cursor: pointer;
-        color: $text;
+        color: $background;
         width: 70%;
         height: 45px;
-        font-size: 1.3rem;
+        font-size: 1.5rem;
+        font-weight:bolder;
         font-family: $main-font;
 
+    }
+
+    #nextButton{
+       margin: 2rem;
+       background: $text;
+       box-shadow: 1px 1px 10px rgb(104, 101, 101);
+       width: 30%;
+       height: 4rem;
+       color: $background;
+       font-size: 3rem; 
+       font-family:$header-font;
+       border: 1px solid $text;
+        border-radius: 10px;
+
         &:hover {
-            background-color: #8f000c;
+            background-color: darken($background, 10%);
+            color: $text;
         }
 
+    }
 
+    @media(max-width: 768px){
+        .question-image-container{
+            padding: 1rem;
+
+            img {
+                height: 300px;
+            }
+            .question-text{
+                font-size: 1.5rem;
+            }
+        }
+        .options{
+            gap: 5px;
+            height: auto;
+
+            li{
+                .option-btn{
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        #nextButton{
+            width: 50%;
+            height: 3rem;
+            font-size: 2rem;
+        }
+    }
+
+    @media(max-width: 480px){
+        .question-image-container{
+            padding: 0.5rem;
+
+            img{
+                height: 200px;
+            }
+
+            .question-text h2{
+                font-size: 1.2rem;
+            }
+        }
+        .options {
+            gap: 3px;
+            li{
+                .option-btn{
+                    font-size: 1rem;
+                }
+            }
+        }
+
+        #nextButton{
+            width: 70%;
+            height: 2.5rem;
+            font-size: 1.5rem;
+        }
     }
 }
