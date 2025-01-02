@@ -42,17 +42,15 @@ export function navigateQuestion() {
         getScore()
     }
     selectedAnswer = '';
-
-    setTimeout(() => {
-        if (currentQuestionIndex < questionList.length - 1) {
-            currentQuestionIndex++;
-            printHtml();
-        } else {
-            //U can make function here that calls the end card
-            stopTimer()
-            displayEndCard();
-        }
-    }, 1500)
+    displayUserPoints(); // update point display on every next button
+    if (currentQuestionIndex < questionList.length - 1) {
+        currentQuestionIndex++;
+        printHtml();
+    } else {
+        //U can make function here that calls the end card
+        stopTimer()
+        displayEndCard();
+    }
 }
 
 //Handles click event for answer option buttons 
@@ -63,18 +61,14 @@ export function handleOptionClick(event: Event){
 
     //Check if target element is a button with the right class
     if(target.tagName === 'BUTTON' && target.classList.contains('option-btn')){
+
+        // adds Active class to option button
+        const optionButtons = document.querySelectorAll('.option-btn');
+        optionButtons.forEach(button => button.classList.remove('active'));
+        target.classList.add('active');
+
         selectedAnswer = target.textContent || ''
     }
-
-    const currentQuestion = questionList[currentQuestionIndex];
-    const isCorrect = checkAnswer(currentQuestion, selectedAnswer);
-
-    if (isCorrect) {
-        target.classList.add('correct')
-    }
-
-    const optionBtns = document.querySelectorAll('.option-btn')
-    optionBtns.forEach((btn) => btn.setAttribute('disabled', 'true'))
 }
 
 export function printHtml() {
@@ -140,8 +134,6 @@ export function displayEndCard() {
         }
     }
 }
-
-
 
 export function restartQuiz() {
     currentQuestionIndex = 0;

@@ -12,6 +12,8 @@ _Trello board on December 23, 2024._ ![Trello board on 23.dec.2024](./public/tre
 
 _Trello board on December 30, 2024._ ![Trello board on 30.dec.2024](./public/trello-logs/swift-group-log-30-dec.png)
 
+_Trello board on January 2, 2025._ ![Trello board on 2.jan.2025](./public/trello-logs/swift-group-log-2-jan.png)
+
 # Retro Log - Team Swift
 
 _Retro board on December 27, 2024._ ![Retro board on 27.dec.2024](./public/retro-logs/swift-grout-retro-27-dec.jpg)
