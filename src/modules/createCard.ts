@@ -46,6 +46,19 @@ export function navigateQuestion() {
     }
     selectedAnswer = '';
     displayUserPoints(); // update point display on every next button
+    
+    // Check and display the right answer in green.
+    const correctAnswer = Object.keys(currentQuestion.answer).find(key => currentQuestion.answer[key]);
+    const optionButtons = document.querySelectorAll('.option-btn')
+    optionButtons.forEach((button: Element) => {
+        const btn = button as HTMLElement;
+        if (btn.textContent === correctAnswer) {
+            btn.classList.add('correct'); // Lägg till klassen för rätt svar
+        } else {
+            btn.classList.remove('correct'); // Ta bort klassen från andra svar
+        }
+    })
+
     /**
      * The delay will give the user enough time to see wich answer is correct.
      */
