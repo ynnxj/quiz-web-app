@@ -2,11 +2,57 @@
 
 .timer-pts {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: darken($background, 5%);
+    border: 1px solid $text;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+
+    .points-btn,
+    .count-up-timer {
+        @include basic;
+        margin: 0.5rem;
+        padding: 0.5rem 1rem;
+        border: 1px solid $text;
+        border-radius: 8px;
+        background-color: $text;
+        color: $background;
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+        min-width: 120px;
+
+    }
+    .count-up-timer {
+        font-family: $header-font;
+    }
 }
 
-.points-btn, .count-up-timer {
-    @include basic;
-    margin: 1rem 0.5rem 1rem 0.5rem;
-    padding: 0.2rem 1rem 0.2rem 1rem;
+@media (max-width:760px){
+    .timer-pts{
+        flex-direction: column;
+        gap: 1rem;
+
+        .points-btn,
+        .count-up-timer{
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            min-width: auto;
+        }
+    }
+}
+
+@media (max-width: 480px){
+    .timer-pts{
+        padding: 0.5rem;
+
+        .points-btn,
+        .count-up-timer {
+            font-size: 1rem;
+            padding: 0.3rem;
+        }
+    }
 }
