@@ -43,6 +43,10 @@ export function navigateQuestion() {
     }
     selectedAnswer = '';
     displayUserPoints(); // update point display on every next button
+    
+    /**
+     * The delay will give the user enough time to see wich answer is correct.
+     */
     setTimeout(() => {
         if (currentQuestionIndex < questionList.length - 1) {
             currentQuestionIndex++;
