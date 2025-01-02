@@ -193,6 +193,13 @@
             color: $text;
         }
 
+        &:disabled {
+            background-color: #d3af8f; 
+            color: #6f5e5e;
+            opacity: 0.6;
+            cursor: not-allowed; 
+        }
+
     }
 
     @media(max-width: 768px){

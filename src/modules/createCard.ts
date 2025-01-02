@@ -74,6 +74,12 @@ export function handleOptionClick(event: Event){
         target.classList.add('active');
 
         selectedAnswer = target.textContent || ''
+
+        // removes Disabled attribute to next button
+        const nextButton = document.getElementById('nextButton')
+        if (nextButton) {
+            nextButton.removeAttribute('disabled')
+        }
     }
 }
 
@@ -91,6 +97,7 @@ export function printHtml() {
 
     const nextButton = document.getElementById('nextButton')
     if (nextButton) {
+        nextButton.setAttribute('disabled', 'true') // Set disabled as default on next button
         nextButton.addEventListener('click', navigateQuestion)
         displayUserPoints()
     }
