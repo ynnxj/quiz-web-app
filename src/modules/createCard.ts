@@ -1,20 +1,23 @@
-import { checkAnswer, getScore, resetUserScore, userScore } from './checkAnswers';
-import { Questions, questionList } from './questions';
-import { displayUserPoints } from './displayUserPoints';
-import { userTime, startTimer, stopTimer } from './timer';
-import { handleQuestions } from './setUpQuestions';
 
-let currentQuestionIndex: number = 0;
-let selectedAnswer: string = '';
+import { checkAnswer, getScore, resetUserScore, userScore} from './checkAnswers'
+import { Questions, questionList } from './questions'
+import { displayUserPoints } from './displayUserPoints'
+import { userTime, startTimer, stopTimer } from './timer'
+import { handleQuestions } from './setUpQuestions'
+
+let currentQuestionIndex:number = 0
+let selectedAnswer:string = ''
+
+
 
 // generates HTML for display questions + answer options
-export function createHtml(questionList: Questions[], index: number) {
+export function createHtml(questionList: Questions[], index: number){
     const question = questionList[index];
-    // Extract answer options from answer property
+    //Extract answer options from answer property
     const options = Object.keys(question.answer)
-        .map((option) => `<li><button class="option-btn">${option}</button></li>`)
-        // ensure no commas or separators are included
-        .join('');
+    .map((option) => `<li><button class="option-btn">${option}</button></li>`)
+    //ensure no commas or seperator are included
+    .join('');
     return `
         <div class="question-container">
             <div class="question-image-container">
@@ -33,101 +36,104 @@ export function createHtml(questionList: Questions[], index: number) {
     `;
 }
 
+// 
 export function navigateQuestion() {
-    const currentQuestion = questionList[currentQuestionIndex];
+    const currentQuestion = questionList[currentQuestionIndex]
     
-    // Validate the answer and update the score
-    if (selectedAnswer && checkAnswer(currentQuestion, selectedAnswer)) {
-        getScore();
+    //Validate the answer and update the score 
+    if(selectedAnswer && checkAnswer(currentQuestion, selectedAnswer)){
+        getScore()
     }
     selectedAnswer = '';
     displayUserPoints(); // update point display on every next button
     
     // Check and display the right answer in green.
     const correctAnswer = Object.keys(currentQuestion.answer).find(key => currentQuestion.answer[key]);
-    const optionButtons = document.querySelectorAll('.option-btn');
+    const optionButtons = document.querySelectorAll('.option-btn')
     optionButtons.forEach((button: Element) => {
         const btn = button as HTMLElement;
         if (btn.textContent === correctAnswer) {
-            btn.classList.add('correct'); // Add class for correct answer
+            btn.classList.add('correct'); // Lägg till klassen för rätt svar
         } else {
-            btn.classList.remove('correct'); // Remove class from other answers
+            btn.classList.remove('correct'); // Ta bort klassen från andra svar
         }
-    });
+    })
 
     /**
-     * The delay will give the user enough time to see which answer is correct.
+     * The delay will give the user enough time to see wich answer is correct.
      */
     setTimeout(() => {
         if (currentQuestionIndex < questionList.length - 1) {
             currentQuestionIndex++;
             printHtml();
         } else {
-            // You can make a function here that calls the end card
-            stopTimer();
+            //U can make function here that calls the end card
+            stopTimer()
             displayEndCard();
         }
-    }, 1500);
+    }, 1500)
 }
 
-// Handles click event for answer option buttons 
-export function handleOptionClick(event: Event) {
-    // Get the target element of the click and cast as HTMLElement
+//Handles click event for answer option buttons 
+export function handleOptionClick(event: Event){
+
+    //Get the target element of the click and cast as htmlelement 
     const target = event.target as HTMLElement;
 
-    // Check if the target element is a button with the right class
-    if (target.tagName === 'BUTTON' && target.classList.contains('option-btn')) {
-        // Add Active class to option button
+    //Check if target element is a button with the right class
+    if(target.tagName === 'BUTTON' && target.classList.contains('option-btn')){
+
+        // adds Active class to option button
         const optionButtons = document.querySelectorAll('.option-btn');
         optionButtons.forEach(button => button.classList.remove('active'));
         target.classList.add('active');
 
-        selectedAnswer = target.textContent || '';
+        selectedAnswer = target.textContent || ''
 
-        // Remove Disabled attribute from the next button
-        const nextButton = document.getElementById('nextButton');
+        // removes Disabled attribute to next button
+        const nextButton = document.getElementById('nextButton')
         if (nextButton) {
-            nextButton.removeAttribute('disabled');
+            nextButton.removeAttribute('disabled')
         }
     }
 }
 
 export function printHtml() {
     const htmlContent = createHtml(questionList, currentQuestionIndex);
-    const container = document.querySelector<HTMLElement>('.card-container');
+    const container = document.querySelector<HTMLElement>('.card-container')
     if (container) {
         container.innerHTML = htmlContent;
     }
 
-    const optionButton = document.querySelectorAll('.option-btn');
+    const optionButton = document.querySelectorAll('.option-btn')
     optionButton.forEach((button) => {
-        button.addEventListener('click', handleOptionClick);
-    });
+        button.addEventListener('click', handleOptionClick)
+    })
 
-    const nextButton = document.getElementById('nextButton');
+    const nextButton = document.getElementById('nextButton')
     if (nextButton) {
-        nextButton.setAttribute('disabled', 'true'); // Set disabled as default on next button
-        nextButton.addEventListener('click', navigateQuestion);
-        displayUserPoints();
+        nextButton.setAttribute('disabled', 'true') // Set disabled as default on next button
+        nextButton.addEventListener('click', navigateQuestion)
+        displayUserPoints()
     }
 }
 
 /**
- * This function will print the end card showing the user's final score, time and
+ * This function will print the end card showing the users final score, time and
  * a restart button.
  */
 export function displayEndCard() {
     const container = document.querySelector<HTMLElement>('.card-container');
     if (container) {
-        const minutes = Math.floor((userTime ?? 0) / 60);
-        const seconds = (userTime ?? 0) % 60;
-        const formattedUserTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+        const minutes = Math.floor((userTime ?? 0) / 60)
+        const seconds = (userTime ?? 0) % 60
+        const formattedUserTime = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
         // % counter
         const maxQuestions = 10;
-        const correctPercentage = ((userScore ?? 0) / maxQuestions) * 100; // counts the % of correct answer 
+        const correctPercentage = ((userScore ?? 0)/ maxQuestions)* 100; // counts the % of correct answer 
         container.innerHTML = `
             <div class="start-end-card">
-                <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on an old piece of paper with the Disney logo in the foreground.">
+                <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
                 <h2>Disney Quiz</h2>
                 <section class="card-info">
                     <div>
@@ -157,11 +163,12 @@ export function displayEndCard() {
     }
 }
 
+
 export function restartQuiz() {
     currentQuestionIndex = 0;
     selectedAnswer = '';
     resetUserScore();
-    startTimer();
+    startTimer()
     handleQuestions('restart'); // Display second set of questions
-    printHtml(); // Start over with the first question
+    printHtml(); //Start over with the first question
 }
