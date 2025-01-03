@@ -6,11 +6,9 @@
     align-items: center;
     gap: 490px;
     margin-top: 10px;
-    .points-btn,
+    .points-counter,
     .count-up-timer {
         @include basic;
-        border: 1px solid $text;
-        border-radius: 8px;
         background-color: $text;
         color: $background;
         font-size: 1.4rem;
@@ -22,4 +20,3 @@
         font-family: $header-font;
     }
 }
-
