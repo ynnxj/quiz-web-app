@@ -17,17 +17,19 @@ body{
         }
        
         
-        .card-container{
+        .card-container {
             width: 100%;
             padding-top: 5px;
             padding-right: 5px;
             padding-left: 5px;
-            .start-end-card{
+
+            .start-end-card {
+                width: 100%;
                 h2{
                     padding-top: 30px;
                 }
             }
-            .start-button-box{
+            .start-button-box {
                 margin-top: 30px;
                 width: 100%;
                 display: flex;
@@ -36,22 +38,39 @@ body{
             
            
         }
-        .question-container{
-            .question-image-container{
-                
-                .question-text{
+        .question-container {
+            height: 720px;
+            .question-image-container {
+                height: 100%;
+                img {
+                    height: 300px;
+                }
+                .question-text {
+                    height: 150px;
                     h2{
                         font-size: 1.8rem;
                     }
                 }
             }
-            button{
-                width: 95%;
-                font-size: 1.4rem;
+            .options {
+                margin-top: 20px;
+                height: 400px;
+                li{
+                    width: 100%;
+                    .option-btn{
+                        height: 60px;
+                        font-size: 1.2rem;
+                    }
+                }
             }
-            #nextButton{
-                width: 45%;
+         
+            .navigation-buttons {
+                width: 100%;
+                #nextButton {
+                    width: 55%;
+                }
             }
+            
         }
     }
     
