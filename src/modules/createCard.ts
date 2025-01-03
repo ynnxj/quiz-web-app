@@ -37,7 +37,7 @@ export function createHtml(questionList: Questions[], index: number){
     `;
 }
 
-// 
+
 export function navigateQuestion() {
     const currentQuestion = questionList[currentQuestionIndex]
     
@@ -147,7 +147,7 @@ export function displayEndCard() {
         const correctPercentage = ((userScore ?? 0)/ maxQuestions)* 100; // counts the % of correct answer 
         container.innerHTML = `
             <div class="start-end-card">
-                <img src="public/images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
+                <img src="images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
                 <h2>Disney Quiz</h2>
                 <section class="card-info">
                     <div>

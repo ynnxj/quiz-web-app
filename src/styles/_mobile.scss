@@ -1,0 +1,53 @@
+body{
+    main{
+        height: 100vh;
+        .timer-pts{
+            display: flex;
+            flex-direction:row;
+            justify-content: space-between;
+            gap: 0;
+            padding-right: 5px;
+            padding-left: 5px;
+            .points-btn,
+            .count-up-timer{
+                font-size: 1.4rem;
+                min-width: 90px;
+            }
+           
+        }
+       
+        
+        .card-container{
+            width: 100%;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-left: 5px;
+            .start-end-card{
+                h2{
+                    padding-top: 30px;
+                }
+            }
+            .start-button-box{
+                margin-top: 60px;
+            }
+           
+        }
+        .question-container{
+            .question-image-container{
+                
+                .question-text{
+                    h2{
+                        font-size: 1.8rem;
+                    }
+                }
+            }
+            button{
+                width: 90%;
+            }
+            #nextButton{
+                width: 45%;
+            }
+        }
+    }
+    
+}
