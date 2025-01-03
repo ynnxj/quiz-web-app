@@ -37,7 +37,7 @@ export function createHtml(questionList: Questions[], index: number){
     `;
 }
 
-// 
+
 export function navigateQuestion() {
     const currentQuestion = questionList[currentQuestionIndex]
     
