@@ -75,3 +75,16 @@
 4. Timer is done.
 5. Create function that shows the correct answer when clicking next button.
 6. Fix so that the next button is locked until there is an answer selected.
+
+# Swift Team Meeting - January 3, 2025
+1. Reviewed our second sprint.
+2. Retro is done and documented in README.
+3. Disabled next button is done.
+4. Function to show the correct answer when clicking the next button is done.
+5. Added more information in README.
+6. Updated Trello with new tasks.
+7. Further styling/fine tuning in progress.
+8. Test for bugs, code cleaning and a11y in progress.
+9. Fix mobile layout.
+10. We discussed how to tackle the upcoming presentation.
+11. Wiktor is the new Scrum master.
