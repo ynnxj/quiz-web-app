@@ -30,7 +30,8 @@ export function createHtml(questionList: Questions[], index: number){
                  ${options}
             </div>
             <div class="navigation-buttons">
-                <button class="next-btn" id="nextButton" ${index === questionList.length - 1}">Next</button>
+                <button class="next-btn" id="nextButton" disabled aria-disabled="true" aria-describedby="next-btn-disabled-description">Next</button>
+                <p id="next-btn-disabled-description" class="sr-only">Choose an answer to unlock this button.</p>
             </div>
         </div>
     `;
@@ -58,6 +59,15 @@ export function navigateQuestion() {
             btn.classList.remove('correct'); // Ta bort klassen från andra svar
         }
     })
+
+    // Disable next button after first click, while waiting for next question to render.
+    const nextButton = document.getElementById('nextButton')
+    if (nextButton) {
+        nextButton.setAttribute('disabled', 'true') // Set disabled as default on next button
+        nextButton.setAttribute('aria-disabled', 'true')
+    }
+    // Disable answer option buttons when clicked on next button, untill next question is rendered
+    optionButtons.forEach((btn) => btn.setAttribute('disabled', 'true'))
 
     /**
      * The delay will give the user enough time to see wich answer is correct.
@@ -94,6 +104,8 @@ export function handleOptionClick(event: Event){
         const nextButton = document.getElementById('nextButton')
         if (nextButton) {
             nextButton.removeAttribute('disabled')
+            nextButton.removeAttribute('aria-disabled')
+            nextButton.removeAttribute('aria-describedby')
         }
     }
 }
@@ -115,7 +127,6 @@ export function printHtml() {
 
     const nextButton = document.getElementById('nextButton')
     if (nextButton) {
-        nextButton.setAttribute('disabled', 'true') // Set disabled as default on next button
         nextButton.addEventListener('click', navigateQuestion)
         displayUserPoints()
     }
