@@ -86,4 +86,5 @@
 7. Further styling/fine tuning in progress.
 8. Test for bugs, code cleaning and a11y in progress.
 9. Fix mobile layout.
-10. Wiktor is the new Scrum master.
+10. We discussed how to tackle the upcoming presentation.
+11. Wiktor is the new Scrum master.
