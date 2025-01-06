@@ -149,7 +149,7 @@ export function displayEndCard() {
             <div class="start-end-card">
                 <img src="images/disney_first.webp" height="700" width="1400" alt="Big castle drawn with pencil on a old piece of paper with the Disney logo in the foreground.">
                 <h2>Disney Quiz</h2>
-                <section class="card-info">
+                <div class="card-info">
                     <div>
                         <p id="card-question-score">Your Score</p>
                         <hr>
@@ -164,7 +164,7 @@ export function displayEndCard() {
                         <hr>
                         <p id="card-points">${userScore}/10</p>
                     </div>
-                </section>
+                </div>
             </div>
             <div class="end-button-box">
                 <button class="restart-btn" id="restart-button">Play Again</button>
