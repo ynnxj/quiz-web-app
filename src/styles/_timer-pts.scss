@@ -6,6 +6,7 @@
     align-items: center;
     gap: 490px;
     margin-top: 10px;
+
     .points-counter,
     .count-up-timer {
         @include basic;
@@ -16,6 +17,7 @@
         text-align: center;
         min-width: 120px;
     }
+    
     .count-up-timer {
         font-family: $header-font;
     }
