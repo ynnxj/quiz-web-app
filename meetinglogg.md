@@ -88,3 +88,9 @@
 9. Fix mobile layout.
 10. We discussed how to tackle the upcoming presentation.
 11. Wiktor is the new Scrum master.
+
+# Swift Team Meeting - January 7, 2025
+1. Looked at the Idea Doc that was made by jennifer on how our presentation could look like.
+2. Discussed about some changes in the presentation and how we going to do it.
+3. Discussed who is going to present what on the final presentation.
+4. Planned how our week is going to look like.
