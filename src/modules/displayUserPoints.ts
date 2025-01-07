@@ -1,4 +1,4 @@
-import { userScore } from "./checkAnswers"
+import { userScore } from './checkAnswers'
 
 const userPoints: HTMLElement | null = document.querySelector('#points-counter')
 

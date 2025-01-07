@@ -1,4 +1,4 @@
-import { Questions } from "./questions"
+import { Questions } from './questions'
 
 export let userScore = 0
 
@@ -15,7 +15,6 @@ export function checkAnswer(question: Questions, selectedAnswer: string): boolea
 }
 
 export function getScore(): number {
-  console.log(userScore)
   //return the users score
   return userScore
 }

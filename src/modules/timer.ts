@@ -46,7 +46,7 @@ export function updateTimerDisplay() {
     if (!countUpTimer) {
     return
 }
-    let minutes = Math.floor(quizTime/60)
-    let seconds = quizTime % 60
+    const minutes = Math.floor(quizTime/60)
+    const seconds = quizTime % 60
     countUpTimer.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
 }
