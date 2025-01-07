@@ -3,14 +3,13 @@
 @import 'reset';
 @import 'timer-pts.scss';
 
-@media only screen and (min-width:260px) and (max-width: 760px) {
+@media only screen and (max-width: 760px) {
     @import 'mobile';
-
 }
+
 body {
     background-color: $background;
     color: $text;
-    
 }
 
 button:focus {
@@ -21,6 +20,7 @@ button:focus {
 
 header {
     border-bottom: 1px solid $text;
+    
     h1 {
         display: flex;
         justify-content: center;

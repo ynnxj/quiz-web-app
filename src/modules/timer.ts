@@ -44,7 +44,7 @@ export function stopTimer() {
 export function updateTimerDisplay() {
     const countUpTimer = document.querySelector('#count-up-timer') as HTMLElement
     if (!countUpTimer) {
-    return;
+    return
 }
     let minutes = Math.floor(quizTime/60)
     let seconds = quizTime % 60

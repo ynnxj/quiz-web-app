@@ -1,12 +1,12 @@
 export interface Questions{
-    id: number;
+    id: number
     img: {
-        url: string;
-        alt: string;
-        width: number;
-        height: number;
+        url: string
+        alt: string
+        width: number
+        height: number
     };
-    question: string;
+    question: string
     answer: { [key: string]: boolean };
 }
   
