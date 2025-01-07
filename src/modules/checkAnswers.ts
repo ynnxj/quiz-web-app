@@ -1,4 +1,4 @@
-import { Questions } from "./questions"
+import { Questions } from './questions'
 
 export let userScore = 0
 

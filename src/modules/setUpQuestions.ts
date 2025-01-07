@@ -1,6 +1,8 @@
 import { Questions, questionList } from './questions'
 import { printHtml, restartQuiz } from './createCard'
 import { startTimer } from './timer.ts'
+import { displayUserPoints } from './displayUserPoints'
+
 
 // Arrays to store questions
 let firstQuestions: Questions[] = []
@@ -49,14 +51,18 @@ export function handleQuestions(set: 'start' | 'restart') {
 }
 
 /**
- * EventListeners for start and restart buttons.
+ * Initializes quiz & adds -
+ * eventListeners for start and restart buttons.
  * If start button is clicked, display first set.
  * If restart button is clicked, display second set
  * and restart quiz.
  */
-export function setupEventListeners() {
+export function initializeQuiz() {
     const startButton = document.getElementById('start-button')
-    const restartButton = document.getElementById('restart-button') 
+    const restartButton = document.getElementById('restart-button')
+
+    displayUserPoints()
+
 
     if (startButton) {
         startButton.addEventListener('click', () => {
