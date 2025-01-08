@@ -8,6 +8,9 @@ let timerInterval: number | undefined
  * Allows only one timer to run at a time.
  */
 export function startTimer() {
+    quizTime = 0
+    updateTimerDisplay()
+    
     // Check if there is a timer already running and stop it.
      if (timerInterval) {
         clearInterval(timerInterval)
@@ -33,7 +36,6 @@ export function startTimer() {
 export function stopTimer() {
     clearInterval(timerInterval)
     userTime = quizTime
-    quizTime = 0
     updateTimerDisplay()
     return userTime
 }
@@ -44,8 +46,8 @@ export function stopTimer() {
 export function updateTimerDisplay() {
     const countUpTimer = document.querySelector('#count-up-timer') as HTMLElement
     if (!countUpTimer) {
-    return
-}
+        return
+    }
     const minutes = Math.floor(quizTime/60)
     const seconds = quizTime % 60
     countUpTimer.innerHTML = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`
