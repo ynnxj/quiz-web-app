@@ -22,7 +22,8 @@ dist-ssr
 *.sln
 *.sw?
 *.css.map
-style.css 
+style.css
+style\css\styles.css
 
 # macOS System files
 .DS_Store
